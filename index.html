@@ -1,172 +1,433 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
-<title>Exam 2 Quick</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Biopsych Exam 3</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#e8e8e8;font:11px/1.45 -apple-system,system-ui,sans-serif;padding:6px;-webkit-text-size-adjust:100%}
-b{color:#5ac8fa}
-h2{color:#ff9f0a;font-size:12px;margin:10px 0 4px;border-bottom:1px solid #333;padding-bottom:2px}
-h3{color:#30d158;font-size:11px;margin:7px 0 2px}
-p,li{margin-bottom:3px}
-ul{padding-left:14px;margin-bottom:4px}
-li{margin-bottom:2px}
-table{width:100%;border-collapse:collapse;margin:3px 0 6px;font-size:10px}
-th{background:#1a1a2e;color:#5ac8fa;text-align:left;padding:3px 4px}
-td{border-top:1px solid #222;padding:2px 4px}
-.hi{color:#ffd60a}
-.r{color:#ff453a}
-.g{color:#30d158}
-.p{color:#bf5af2}
-hr{border:0;border-top:1px solid #333;margin:8px 0}
-</style></head><body>
+:root{
+  --bg:#000;--ink:#fff;--mut:#8a8f9a;--line:#222;
+  --drug:#ff9f40;    /* orange */
+  --rew:#ffd166;     /* gold */
+  --stress:#ff4d6d;  /* red */
+  --emo:#c58dff;     /* purple */
+  --fear:#ffe066;    /* yellow */
+  --lh:#5fb8ff;      /* blue */
+  --anx:#5fe3a1;     /* green */
+}
+*{box-sizing:border-box;-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0;background:#000;color:#fff;
+  font:11px/1.32 -apple-system,"SF Pro Text",system-ui,sans-serif;
+  font-feature-settings:"tnum","ss01";
+  letter-spacing:-.01em;
+  overscroll-behavior:contain}
+.nav{position:sticky;top:0;background:#000;border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:2px;padding:3px;z-index:10;font-size:10px}
+.nav a{flex:1;min-width:30px;text-align:center;padding:3px 2px;border-radius:4px;
+  text-decoration:none;color:#000;font-weight:800;letter-spacing:.02em}
+.n-drug{background:var(--drug)}.n-rew{background:var(--rew)}
+.n-stress{background:var(--stress)}.n-emo{background:var(--emo)}
+.n-fear{background:var(--fear)}.n-lh{background:var(--lh)}
+.n-anx{background:var(--anx)}
+h2{font-size:11px;margin:0;padding:4px 6px;font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;color:#000}
+.drug h2{background:var(--drug)}
+.rew h2{background:var(--rew)}
+.stress h2{background:var(--stress)}
+.emo h2{background:var(--emo)}
+.fear h2{background:var(--fear)}
+.lh h2{background:var(--lh)}
+.anx h2{background:var(--anx)}
+section{border-bottom:1px solid var(--line);padding:0 0 4px}
+.body{padding:4px 6px 2px}
+h3{font-size:10.5px;margin:5px 0 1px;font-weight:800;letter-spacing:.02em}
+.drug h3{color:var(--drug)}
+.rew h3{color:var(--rew)}
+.stress h3{color:var(--stress)}
+.emo h3{color:var(--emo)}
+.fear h3{color:var(--fear)}
+.lh h3{color:var(--lh)}
+.anx h3{color:var(--anx)}
+p{margin:1px 0}
+b{font-weight:800;color:#fff}
+.k{color:#fff;font-weight:800}
+.m{color:var(--mut)}
+.arrow{color:#8a8f9a}
+ul{margin:1px 0 2px;padding:0 0 0 10px;list-style:none}
+li{margin:1px 0;padding-left:6px;text-indent:-6px}
+li::before{content:"·";color:#666;margin-right:3px;font-weight:800}
+.flow{font-family:"SF Mono",ui-monospace,monospace;font-size:9.5px;
+  line-height:1.25;color:#ddd;padding:3px 0;white-space:nowrap;overflow-x:auto}
+.flow b{color:#fff}
+.tbl{display:grid;grid-template-columns:auto 1fr;gap:1px 5px;margin:2px 0;font-size:10.5px}
+.tbl .l{color:#fff;font-weight:800}
+.tbl .r{color:#cfd6e1}
+.pill{display:inline-block;padding:0 4px;border-radius:3px;font-weight:800;
+  color:#000;font-size:9.5px;margin-right:2px;vertical-align:1px}
+.p-da{background:var(--drug)}
+.p-gaba{background:var(--lh)}
+.p-5ht{background:var(--anx)}
+.p-ach{background:var(--fear)}
+.p-op{background:var(--emo)}
+.warn{color:var(--stress);font-weight:800}
+.good{color:var(--anx);font-weight:800}
+.hi{color:var(--fear);font-weight:800}
+hr{border:none;border-top:1px dashed #2a2a2a;margin:3px 0}
+.to-top{position:fixed;right:5px;bottom:5px;width:22px;height:22px;
+  background:rgba(255,255,255,.15);border:none;border-radius:50%;
+  color:#fff;font-size:12px;font-weight:800;padding:0;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+</style>
+</head>
+<body>
 
-<h2>⚡ ACTION POTENTIALS</h2>
-<p><b>Resting potential</b> = −70 mV. <b>K⁺</b> most permeable at rest (leak channels).</p>
-<p><b>Membrane</b> = phospholipid bilayer + ion channel proteins. Selectively permeable.</p>
-<p><b>Ions at rest:</b> Outside = Na⁺, Cl⁻. Inside = K⁺, P⁻ (proteins).</p>
-<p><b>Forces on ions:</b> electrostatic + concentration gradients.</p>
-<p><b>Equilibrium potentials:</b> K⁺ ≈ −85mV, Cl⁻ ≈ −66mV, Na⁺ ≈ +55mV. Ca²⁺ similar pressures to Na⁺.</p>
-<p><b>Ion channel gating:</b> leak (always open), voltage-gated (APs), chemical/ligand-gated, mechanical, temperature, acidity.</p>
+<div class="nav">
+  <a class="n-drug" href="#d">Dr</a>
+  <a class="n-rew" href="#r">Rw</a>
+  <a class="n-stress" href="#s">St</a>
+  <a class="n-emo" href="#e">Em</a>
+  <a class="n-fear" href="#f">Fr</a>
+  <a class="n-lh" href="#l">LH</a>
+  <a class="n-anx" href="#a">Ax</a>
+</div>
 
-<h3>AP Steps</h3>
-<p>1. Threshold (−55mV) → 2. <b>Na⁺ channels open</b>, Na⁺ rushes IN → +40mV → 3. Na⁺ channels <b>inactivate</b> → 4. <b>K⁺ channels open</b> (delayed), K⁺ rushes OUT → repolarization → 5. K⁺ channels slow to close → <b>hyperpolarization</b> (−90mV) → 6. Return to −70mV</p>
-<p><b>All-or-none:</b> AP fires fully or not at all. Intensity encoded by <b>firing rate</b>.</p>
+<!-- ========== DRUGS ========== -->
+<section class="drug" id="d">
+<h2>1 · Drugs</h2>
+<div class="body">
 
-<h3>Refractory Periods</h3>
-<p><b>Absolute:</b> CANNOT fire. Na⁺ channels <b>inactivated</b>.</p>
-<p><b>Relative:</b> CAN fire but needs <b>stronger</b> stimulus. Membrane <b>hyperpolarized</b> (K⁺).</p>
+<h3>Tolerance</h3>
+<p>↓responsiveness, need more for same effect.</p>
+<ul>
+  <li><b>Metabolic</b>: body breaks drug down faster (liver↑)</li>
+  <li><b>Functional</b>: target less responsive — <i>Cellular</i> (receptor↓) or <i>Conditioned</i> (Siegel)</li>
+  <li><b>Cross-tol</b>: tol to 1 drug → tol to another (same system)</li>
+  <li><b>Sensitization</b>: opposite. Bigger response. Dose-curve shifts <b class="hi">LEFT</b></li>
+</ul>
 
-<h3>Na⁺/K⁺ Pump</h3>
-<p><b>3 Na⁺ OUT, 2 K⁺ IN.</b> Uses ATP. Against gradients. Maintains resting potential.</p>
+<h3>Withdrawal</h3>
+<p>Adverse effects of stopping. <b>WD = drug effects FLIPPED.</b></p>
+<div class="tbl">
+  <div class="l">Opiate fx</div><div class="r">drowsy, constipation, ↓resp, ↓HR, ↓pain, ↓BP, euphoria</div>
+  <div class="l">Opiate WD</div><div class="r">insomnia, diarrhea, ↑resp, ↑HR, ↑pain, ↑BP, depression</div>
+</div>
 
-<h3>Propagation</h3>
-<p>AP goes <b>one direction only</b> — behind it = refractory period (Na⁺ inactivated).</p>
-<p><b>Fastest:</b> large + myelinated (<b>saltatory conduction</b> — jumps node to node).</p>
-<p><b>Slowest:</b> small + unmyelinated.</p>
+<h3>Alcohol WD — 4 stages</h3>
+<ol style="margin:1px 0;padding-left:14px">
+  <li><b>Tremors</b>, ↑HR, HTN, sweat, insomnia (hrs)</li>
+  <li><b>Hallucinations</b> (1–2 days)</li>
+  <li><b>Delirium</b>, delusions, disorient, amnesia</li>
+  <li><b>Seizures</b></li>
+</ol>
+<p class="warn">Alcohol WD more dangerous than opiate WD.</p>
+<p><b>Why over-excited?</b> EtOH = GABA<sup>+</sup>/Glu<sup>−</sup>. Brain compensates: ↓GABA, ↑Glu. Remove EtOH → unopposed → too little inhib + too much excit → seizures.</p>
 
-<h3>EPSPs, IPSPs, Summation</h3>
-<p><b>EPSP</b> = small depolarization (closer to threshold). <b>IPSP</b> = small hyperpolarization (farther).</p>
-<p>Dendrites/soma = <b>graded</b> responses (not all-or-none).</p>
-<p><b>Summation:</b> neuron adds all EPSPs & IPSPs. Threshold reached → AP fires.</p>
+<h3>Conditioned tolerance (Siegel)</h3>
+<p>Environment = CS → triggers compensatory CR opposite to drug fx.</p>
+<ul>
+  <li>Adams '69: max tol in drug-assoc env</li>
+  <li>Siegel '77: same dose in <b class="warn">new env → overdose</b></li>
+  <li>Falls '89: more WD in drug-assoc env</li>
+</ul>
 
-<hr>
-<h2>🔗 SYNAPTIC COMMUNICATION</h2>
+<h3>4 classes · BLUE drugs</h3>
+<p><span class="pill p-da">DA</span><b>Stimulants</b></p>
+<ul>
+  <li>Nicotine — <b>ACh agonist</b></li>
+  <li>Amphetamine — <b>DA agonist</b> (releases DA)</li>
+  <li>Cocaine — <b>DA agonist</b> (<b>blocks reuptake</b>)</li>
+</ul>
+<p><span class="pill p-gaba">GABA</span><b>Depress / Anxiolytic</b></p>
+<ul>
+  <li>Alcohol — <b>GABA agonist + Glu antagonist</b></li>
+  <li>Valium — <b>GABA agonist</b> (allosteric mod @ GABA<sub>A</sub>)</li>
+  <li>Buspar — <b>5-HT agonist</b></li>
+</ul>
+<p><span class="pill p-op">OP</span><b>Narcotics</b></p>
+<ul><li>Morphine — <b>opiate agonist</b></li></ul>
+<p><span class="pill p-5ht">5HT</span><b>Hallucinogens</b></p>
+<ul><li>LSD — <b>5-HT agonist</b></li></ul>
 
-<h3>Otto Loewi (1921)</h3>
-<p>Stimulated vagus nerve of frog heart 1 → slowed. Heart 2 in same bath also slowed. Proved chemical communication. <b>Vagusstoff = acetylcholine (ACh)</b>. Parasympathetic branch. <b>1936 Nobel Prize</b>.</p>
+<h3>Cocaine</h3>
+<div class="tbl">
+  <div class="l">Short</div><div class="r">↑energy, ↓appetite, alert, ↑HR/BP, constricted vessels, ↑temp, dilated pupils</div>
+  <div class="l">Long</div><div class="r">addiction, irritability, restless, paranoia, auditory hallucinations</div>
+  <div class="l">Medical</div><div class="r">arrhythmia, MI, chest pain, resp failure, stroke, seizure, abd pain, nausea</div>
+  <div class="l">Poisoning</div><div class="r"><b class="warn">CNS overstim · convulsions · resp/cardiac arrest</b>. Lethal dose unpredictable — rare toxic rxns → rapid death</div>
+  <div class="l">Cellular</div><div class="r"><b>Blocks DA reuptake</b> → DA stays in synapse. Works in <b>VTA→NAc</b> (mesocorticolimbic). Chronic: ↓DA & ↓DA receptors</div>
+</div>
 
-<h3>Synapse & Transmission</h3>
-<p><b>Synapse</b> = gap where NT is released & binds receptors.</p>
-<p>AP arrives → <b>Ca²⁺ channels</b> open → Ca²⁺ triggers <b>exocytosis</b> → vesicles fuse → NT spills into cleft → binds receptors → EPSP/IPSP → NT deactivated</p>
-<p><b>Exocytosis requires CALCIUM (Ca²⁺)!</b></p>
+</div>
+</section>
 
-<h3>NT Deactivation</h3>
-<p><b>Reuptake</b> (pumped back in) · <b>Enzymatic degradation</b> (e.g., AChE breaks down ACh) · <b>Diffusion</b> (drifts away)</p>
+<!-- ========== REWARD ========== -->
+<section class="rew" id="r">
+<h2>2 · Reward · ICSS</h2>
+<div class="body">
 
-<h3>Electrical vs Chemical Synapses</h3>
-<p><b>Electrical (gap junctions) = FASTER</b>, ions pass directly, bidirectional.</p>
-<p>Chemical = slower, NT-mediated, more flexible, usually unidirectional.</p>
+<h3>Olds &amp; Milner (1954)</h3>
+<p>Rats self-stimulate brain via lever (<b>ICSS</b>) — thousands/hr, cross electrified floor, skip food/water/sleep. These sites normally mediate pleasure of natural rewards.</p>
 
-<h3>Receptor Types</h3>
-<p><b>Ionotropic = FAST.</b> NT binds → ion channel opens directly. Ex: nicotinic ACh receptor.</p>
-<p><b>Metabotropic = SLOW but long-lasting.</b> NT binds → G-protein → second messengers → can alter gene expression. Ex: NE receptors.</p>
-<p><b>GABA</b> (inhibitory) → opens Cl⁻ channels at GABA-A → hyperpolarization → IPSP.</p>
+<h3>ICSS sites</h3>
+<ul>
+  <li>Hypothalamus</li>
+  <li>Septum</li>
+  <li>Nucleus accumbens (NAc)</li>
+  <li>Ventral tegmental area (VTA)</li>
+  <li><b class="hi">Medial forebrain bundle</b> — most effective</li>
+</ul>
 
-<hr>
-<h2>🔬 METHODS</h2>
+<h3>DA ↔ ICSS ↔ Drug abuse</h3>
+<p>All converge on <b>mesolimbic/mesolimbocortical DA</b> (VTA→NAc).</p>
+<ul>
+  <li>ICSS ↑ DA release in NAc</li>
+  <li>DA agonists ↑ ICSS; DA antagonists block it</li>
+  <li>Lesions of mesolimbocort pathway → ↓ICSS</li>
+  <li>Drugs of abuse hijack same circuit</li>
+</ul>
 
-<h3>Histology & Tracers</h3>
-<p><b>Histology</b> = study of microscopic tissue structure. Fix brain → slice thin → stain → view under microscope.</p>
-<p><b>Golgi stain:</b> few neurons, FULL shape (Cajal used it → Neuron Doctrine).</p>
-<p><b>Nissl stain:</b> ALL cell bodies, no dendrites/axons.</p>
-<p><b>Retrograde tracers:</b> go BACKWARD to cell body. "Where do inputs come from?"</p>
-<p><b>Anterograde tracers:</b> go FORWARD to terminals. "Where do outputs go?"</p>
-<p><b>Immunohistochemistry:</b> labeled antibodies find specific proteins/NTs in tissue.</p>
+<h3>Microdialysis</h3>
+<p>Measures NT release <i>in vivo</i>.</p>
+<ol style="margin:1px 0;padding-left:14px">
+  <li>Probe stereotaxically implanted</li>
+  <li>Fluid samples collected</li>
+  <li>Analyzed by <b>HPLC</b> (separates by MW)</li>
+</ol>
 
-<h3>Brain Imaging</h3>
-<table>
-<tr><th>Technique</th><th>Type</th><th>Key</th></tr>
-<tr><td><b>CT</b></td><td>Structure</td><td>X-ray cross-sections</td></tr>
-<tr><td><b>MRI</b></td><td>Structure</td><td>Magnetic field + radio waves</td></tr>
-<tr><td><b>EEG</b></td><td>Function</td><td>Scalp electrodes, electrical activity. Best temporal resolution (ms)</td></tr>
-<tr><td><b>PET</b></td><td>Function</td><td>Inject radioactive 2-DG (glucose analog accumulates in active areas)</td></tr>
-<tr><td><b>fMRI</b></td><td>Function</td><td>BOLD signal (Blood Oxygen Level-Dependent)</td></tr>
-</table>
-<p><b>EEG diagnostics:</b> epilepsy, sleep disorders, brain death. Can pick up <b>muscle artifact (EMG)</b>.</p>
-<p><b>Evoked potential:</b> EEG response time-locked to a stimulus (average many trials).</p>
+<h3>Conditioned Place Preference</h3>
+<p>Drug in env A, saline in env B. Later choose freely. Prefers drug env → drug is rewarding. <b>DA agonists → CPP.</b></p>
 
-<h3>Invasive Techniques</h3>
-<p><b>Stereotaxic device:</b> holds head fixed, uses 3D coordinates to target brain regions precisely.</p>
-<p><b>Lesions</b> → what function is LOST. Methods: aspiration, electrolytic, <b>excitotoxic</b> (most precise — spares passing axons).</p>
-<p><b>Stimulation</b> → what function is PRODUCED. Complements lesion studies.</p>
-<p><b>Unit recording:</b> microelectrodes record neurons. Single-unit (1 neuron) → multi-unit (small group) → field potentials (large population).</p>
+</div>
+</section>
 
-<h3>Genetic Tools</h3>
-<p><b>Inbred:</b> genetically identical → eliminates genetic variability.</p>
-<p><b>Knockout:</b> gene deleted → see what goes wrong → reveals gene function.</p>
-<p><b>Transgenic:</b> foreign gene inserted → study its effects (e.g., human disease gene).</p>
-<p class="hi">⚠️ No viral vectors or optogenetics on exam.</p>
+<!-- ========== STRESS ========== -->
+<section class="stress" id="s">
+<h2>3 · Stress</h2>
+<div class="body">
 
-<h3>Animal Ethics</h3>
-<p><b>FOR:</b> life-saving treatments, animals benefit too, tightly regulated.</p>
-<p><b>AGAINST:</b> suffering concerns, species differences, improving alternatives.</p>
-<p><b>IACUC:</b> reviews/approves all protocols. Must include 1 vet + 1 unaffiliated community member.</p>
-<p><b>Animal Welfare Act:</b> housing/feeding/handling/vet care standards; must show research is necessary & alternatives not feasible; minimize pain/distress; annual USDA reporting; IACUC mandated.</p>
+<h3>Definition · Selye</h3>
+<p>Stress = any <b>deviation from homeostasis</b>. <b>Hans Selye</b> = first to systematically study stress; first to link stress → illness. <i class="m">(Skip GAS stages.)</i></p>
 
-<hr>
-<h2>💊 PHARMACOLOGY</h2>
+<h3>HPA Axis</h3>
+<div class="flow">
+Stressor<br>
+ ↓<br>
+<b>HYPOTHAL</b> → CRF (corticotropin-<br>releasing factor)<br>
+ ↓<br>
+<b>ANT. PITUITARY</b> → ACTH<br>(adrenocorticotropic hormone)<br>
+ ↓<br>
+<b>ADRENAL CORTEX</b> → <b>CORTISOL</b><br>
+ ↓<br>
+acts on body + <b>− feedback</b><br>
+(inhibits hypothal &amp; pit)
+</div>
 
-<h3>Basics</h3>
-<p><b>Psychoactive drug:</b> affects the <b>nervous system</b> to alter perception/mood/behavior.</p>
-<p>Drugs act at <b>synapses</b>. Must cross <b>BBB</b> to reach brain. Once in blood → distributed in <b>seconds to minutes</b>.</p>
+<h3>Cortisol effects</h3>
+<ul>
+  <li>↑ glucose synthesis</li>
+  <li>↓ glucose uptake (fat, some muscle)</li>
+  <li>↑ fat breakdown</li>
+  <li>Suppresses immune (anti-inflam)</li>
+  <li>Affects behavior (fear)</li>
+  <li><b>Inhibits HPA</b> (neg feedback)</li>
+</ul>
+<p class="m">Motto: "survive now, repair later."</p>
 
-<h3>Routes (fast → slow)</h3>
-<p><b>IV</b> (fastest) → <b>Inhalation</b> → IM → SC → <b>Oral</b> (slowest).</p>
-<p class="hi">Faster routes = quick peak but DON'T maintain blood levels as long. Slower = gradual, sustained.</p>
+<h3>Cushing's</h3>
+<p>↑ cortisol production OR exogenous steroid use. <b>Cushing's <i>Disease</i> = pituitary tumor.</b> Tx: remove tumor. <i class="m">(Skip symptoms.)</i></p>
 
-<h3>BBB & Lipid Solubility</h3>
-<p>BBB = tight junctions + lipid membrane. <b>Fat-soluble crosses; water-soluble can't.</b></p>
-<p><b>Heroin > morphine</b> because heroin is more lipid-soluble → crosses BBB faster.</p>
-<p><b>Non-drowsy antihistamines:</b> less lipid-soluble → can't cross BBB → no brain sedation.</p>
-<p>Yes, some psychoactive drugs do NOT cross the BBB (affect PNS only).</p>
+<h3>Sympathetic (System 2) · 4 fx</h3>
+<ol style="margin:1px 0;padding-left:14px">
+  <li>↑ <b>blood flow to muscles</b></li>
+  <li>↑ <b>heart rate</b></li>
+  <li>↑ <b>blood sugar</b></li>
+  <li><b>Piloerection</b></li>
+</ol>
+<p>+ <b>adrenaline/epinephrine from adrenal glands</b></p>
 
-<h3>Drug Metabolism</h3>
-<p>Drugs broken down by enzymes in the <b>liver</b>.</p>
-<p><b>Acetaldehyde</b> = toxic metabolite from alcohol breakdown. Normally converted to harmless acetic acid.</p>
-<p><b>Antabuse</b> blocks the enzyme that degrades acetaldehyde → accumulates → nausea/vomiting → deters drinking.</p>
+<h3>Catabolic?</h3>
+<p>Both endo + auto systems <b>mobilize energy</b> — break down stores for emergency fuel.</p>
 
-<h3>NT Classification</h3>
-<table>
-<tr><th>Class</th><th>NTs</th></tr>
-<tr><td><b>Amino acids (4)</b></td><td>Glutamate, GABA, Glycine, Aspartate</td></tr>
-<tr><td><b>Monoamines</b></td><td>= Catecholamines + Indolamines (below)</td></tr>
-<tr><td> ↳ <b>Catecholamines (3)</b></td><td>Dopamine, NE, Epinephrine</td></tr>
-<tr><td> ↳ <b>Indolamine (1)</b></td><td>Serotonin (5-HT)</td></tr>
-<tr><td><b>Own class</b></td><td>Acetylcholine (ACh)</td></tr>
-</table>
+<h3>System 3 · Behavioral</h3>
+<p>Brain mediates behavioral consequences of stress.</p>
 
-<h3>4 NT Rules</h3>
-<p>1. <b>Synthesized</b> in neuron · 2. <b>Released</b> when stimulated · 3. <b>Binds receptors</b> → bio effect · 4. <b>Deactivated</b> after release</p>
+</div>
+</section>
 
-<h3>NT Sources</h3>
-<table>
-<tr><th>NT</th><th>From</th><th>Role</th></tr>
-<tr><td><b>ACh</b></td><td>Basal forebrain, brainstem</td><td>Memory, muscles</td></tr>
-<tr><td><b>DA</b></td><td><b>Substantia nigra + VTA</b></td><td>Movement, reward</td></tr>
-<tr><td><b>NE</b></td><td><b>Locus coeruleus</b></td><td>Arousal, attention, stress</td></tr>
-<tr><td><b>5-HT</b></td><td><b>Raphe nuclei</b></td><td>Mood, sleep, appetite</td></tr>
-<tr><td><b>Glutamate</b></td><td>Cortical projection neurons</td><td class="g">Primary EXCITATORY</td></tr>
-<tr><td><b>GABA</b></td><td>Interneurons</td><td class="r">Primary INHIBITORY</td></tr>
-</table>
+<!-- ========== EMOTION ========== -->
+<section class="emo" id="e">
+<h2>4 · Emotion</h2>
+<div class="body">
 
-<h3>Agonists & Antagonists</h3>
-<p><b>Agonist</b> = mimics/enhances NT effect. <b>Antagonist</b> = blocks NT effect.</p>
+<h3>Darwin</h3>
+<p>Emotional expression is <b>innate + evolved</b>. Evidence:</p>
+<ul>
+  <li>Similar in lower animals</li>
+  <li>Present in very young children</li>
+  <li>Same in congenitally blind</li>
+</ul>
+<p>Evolved from behaviors that <b>signal what animal does next</b>. Opposite msgs → opposite behaviors.</p>
 
-<h3>Drug Mechanisms ⭐</h3>
-<p>↑↓ <b>synthesis</b> · block <b>vesicle storage</b> · ↑↓ <b>release</b> · <b>activate</b> receptors (agonist) · <b>block</b> receptors (antagonist) · <b>block reuptake</b> (SSRIs, cocaine) · <b>block enzymatic degradation</b> (MAO inhibitors)</p>
+<h3>James-Lange</h3>
+<p>Stim → <b>body reaction</b> → interpreted as feeling.<br>
+<span class="m">"bear → HR↑ → therefore afraid"</span></p>
+<p class="m">Counter-evidence:</p>
+<ul>
+  <li>Epi injection → no emotional feelings alone</li>
+  <li>No peripheral sensation → still feel emotion</li>
+</ul>
 
-<h3>Dose-Response & Tolerance</h3>
-<p><b>Dose-response curve:</b> dose (x) vs effect (y). Different effects of same drug = different curves.</p>
-<p><b>Full agonist asymptote</b> = max receptor activation (all occupied).</p>
-<p><b>Tolerance</b> = diminished response after repeated use. <b>Shifts curve RIGHT</b> (need more drug).</p>
+<h3>Cannon-Bard</h3>
+<p>Stim → body reaction <b>AND</b> feeling <b>simultaneously</b>, independently.<br>
+<span class="m">"bear → HR↑ AND afraid (parallel)"</span></p>
+<p class="hi">JL = sequential. CB = parallel.</p>
 
-</body></html>
+</div>
+</section>
+
+<!-- ========== FEAR ========== -->
+<section class="fear" id="f">
+<h2>5 · Fear · Amygdala</h2>
+<div class="body">
+
+<h3>LeDoux: Low / High road</h3>
+<div class="flow">
+          ┌─ HIGH → <b>CORTEX</b> ─┐<br>
+stim → <b>THAL</b>              <b>AMYG</b> → fear<br>
+          └─── LOW ───────────┘
+</div>
+<ul>
+  <li><b>LOW</b>: thal→amyg. Fast, crude. "Flinch from stick-that-might-be-snake"</li>
+  <li><b>HIGH</b>: thal→cortex→amyg. Slow, accurate. Confirms/cancels</li>
+</ul>
+
+<h3>Observing fear in rodents</h3>
+<ul>
+  <li><b>Freezing</b></li>
+  <li>↑ HR, ↑ startle</li>
+  <li>↓ salivation</li>
+  <li>Defecation</li>
+  <li>Hypoalgesia (↓pain reactivity)</li>
+  <li>↓ activity, ↓ appetite</li>
+</ul>
+<p>Main paradigm: <b>Pavlovian fear conditioning</b> (tone+shock).</p>
+
+<h3>Conditioned fear → Amygdala</h3>
+<p>Lesions in rats/rabbits/mice disrupt it. Human SM (Urbach-Wiethe): amyg damage → conditioned fear deficit. fMRI: amyg activates during fear cond. <i class="m">(Skip specific pathways.)</i></p>
+
+<h3>BLA vs CE</h3>
+<div class="flow">
+CS ─┐<br>
+    ├→ <b>BLA</b> → <b>CE</b> → behaviors<br>
+US ─┘  (learn) (output)
+</div>
+<ul>
+  <li><b>BLA (basolateral complex)</b> = <b class="hi">INPUT</b>. Fear <b>learning</b>. Pairs CS+US. = lateral + basolateral amyg</li>
+  <li><b>CE (central nucleus)</b> = <b class="hi">OUTPUT</b>. Activated by BLA. <b>Coordinates fear response</b> (freeze, startle, sympathetic)</li>
+</ul>
+<p class="m">"BLA learns, CE acts."</p>
+
+</div>
+</section>
+
+<!-- ========== LH ========== -->
+<section class="lh" id="l">
+<h2>6 · Learned Helplessness</h2>
+<div class="body">
+
+<h3>Manipulation</h3>
+<p><b>Controllability</b>. Both groups get <b>identical</b> shock; only one can stop it.</p>
+
+<h3>Paradigm</h3>
+<p>Yoked tailshock. <b>Control group</b>: terminates shock via wheel. <b>Uncontrol group</b>: same shock, no wheel. Only uncontrol → helpless.</p>
+
+<h3>Effects (BLUE list)</h3>
+<p class="m">Almost all <b class="warn">↓</b>, except <b class="good">↑</b> fear/anxiety/ulcers/drug reward.</p>
+<ul>
+  <li>↓ shock responsive, ↓ struggle in water</li>
+  <li>↓ aggression, ↓ social dominance</li>
+  <li>↓ defensive behaviors</li>
+  <li>↓ eating, drinking, sex</li>
+  <li><b>Analgesia</b> (↓pain sens)</li>
+  <li>Learning impairments</li>
+  <li>Inappropriate maternal behavior</li>
+  <li>↓ social interaction</li>
+  <li><b>↑ anxiety, ↑ fear-learning</b></li>
+  <li>↑ ulcers</li>
+  <li>Some drugs of abuse more rewarding</li>
+</ul>
+
+<h3>Depression model</h3>
+<p><b>Good:</b> profile mirrors human depression (motivation, appetite, sex, anxiety, cognition).</p>
+<p><b>Flaw + Maier:</b> models <b>uncontrollability</b> specifically — one aspect relevant to depression AND anxiety/PTSD. Not depression per se.</p>
+<p><b>Uncontrollability does:</b> ↓ fight/flight (escape), ↑ fear &amp; anxiety.</p>
+
+<h3>Autoreceptor</h3>
+<p>Presynaptic, inhibitory receptor regulating its own NT release. <b>Neg feedback / homeostatic</b>. <i>DRN 5-HT1A autoreceptors are postsynaptic but same function.</i></p>
+
+<h3>DRN — necessary &amp; sufficient</h3>
+<p>Uncontrol shock activates DRN 5-HT neurons <b>much more</b> than control (Grahn '99). Activate DRN → helpless. Block DRN during uncontrol → no helpless.</p>
+
+<h3>DRN hypothesis</h3>
+<div class="flow">
+UNCONTROL STRESS<br>
+ ↓<br>
+<b>↓ 5-HT1A autoreceptor function</b><br>
+ ↓<br>
+<b>DRN sensitized</b> (more 5-HT)<br>
+ ├→ AMYGDALA → <b>↑ fear</b><br>
+ └→ dPAG → <b>↓ escape</b>
+</div>
+
+<h3>mPFC</h3>
+<p>Normally <b>inhibits DRN</b>. Executive/emotion regulation. Detects controllability → blocks helplessness. <b class="warn">Shutting off mPFC → LH even with control!</b> mPFC = "I've got this" signal.</p>
+
+</div>
+</section>
+
+<!-- ========== ANXIETY ========== -->
+<section class="anx" id="a">
+<h2>7 · Anxiety · BNST · Tx</h2>
+<div class="body">
+
+<h3>Anxiety disorders</h3>
+<p>Hypothesis: <b>amygdala overactive</b> — responds too strongly, or to things that shouldn't elicit fear. PTSD fMRI: exaggerated amyg to masked faces (Rauch/Whalen). <i class="m">(Skip Predatory Imminence.)</i></p>
+
+<h3>BNST vs Amygdala</h3>
+<div class="tbl">
+  <div class="l">AMYG</div><div class="r"><b>Fear-potentiated startle</b> — discrete, brief CS + shock. Phasic.</div>
+  <div class="l">BNST</div><div class="r"><b>Light-enhanced startle</b> — sustained ambient threat. Also: CRF-startle, predator odor, long-CS fear, context fear, LH, stress-reinstate drug seek, conditioned defeat</div>
+</div>
+
+<h3>Fear vs Anxiety</h3>
+<ul>
+  <li><b>Fear (AMYG)</b>: discrete, predictable, short, phasic. "bear in front of me"</li>
+  <li><b>Anxiety (BNST)</b>: diffuse, unpredictable, sustained, uncertain timing. "bear might appear"</li>
+</ul>
+<p class="m">BNST organizes responses to stimuli that <b>poorly predict when</b> danger occurs. Human fMRI: BNST ↑ in anticipatory anxiety, approaching tarantula, hypervigilance, sustained unpredictable threat.</p>
+
+<h3>Allosteric modulator · Valium</h3>
+<p><b>Allosteric mod</b>: binds a <b>different site</b> than natural NT. Changes receptor <b>shape</b> so NT becomes more (+) or less (−) effective. Doesn't activate alone.</p>
+<p><b>Valium (benzo)</b>: positive allosteric mod @ <b>GABA<sub>A</sub></b>. Makes GABA better at opening Cl<sup>−</sup> channel → ↑ inhibition → ↓ anxiety. Needs GABA to be there. <span class="m">Alcohol also facilitates GABA.</span></p>
+
+<h3>Serotonin in anxiety</h3>
+<p><b class="hi">Confusing field.</b> Depends on: (1) receptor subtype (&gt;18), (2) chronic vs acute, (3) brain region. 5-HT1A KO mice → ↑ anxiety.</p>
+
+</div>
+</section>
+
+<button class="to-top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+document.querySelectorAll('.nav a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))
+      .scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
