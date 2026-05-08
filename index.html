@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSYS 2200 Final Cheat Sheet</title>
+<style>
+  :root {
+    --bg: #000;
+    --panel: #0a0a0a;
+    --rule: #1f1f1f;
+    --body: #d8d8d8;
+    --dim: #888;
+    --section: #00e6c8;     /* Exam unit headers */
+    --topic: #ffb84d;       /* Topic headers */
+    --term: #5cb8ff;        /* the "what you'd search for" */
+    --answer: #ffffff;      /* the answer / definition */
+    --num: #ffe066;         /* numbers, values, units */
+    --crit: #ff8ce0;        /* critical / blue-on-slides emphasis */
+    --struct: #8effbb;      /* anatomy / structure names */
+    --warn: #ff7a8a;        /* opposite/vs / warning */
+    --search-bg: #1a1a1a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--body);
+    font: 14.5px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    padding-bottom: 60px;
+  }
+  /* top nav (not sticky) */
+  .bar {
+    background: var(--bg); border-bottom: 1px solid var(--rule); padding: 10px;
+  }
+  .nav {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .nav a {
+    color: var(--section); text-decoration: none;
+    padding: 8px 12px; min-height: 36px;
+    background: var(--search-bg); border-radius: 6px; font-size: 13px;
+    border: 1px solid var(--rule); font-weight: 600;
+    display: inline-flex; align-items: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .nav a:active { background: #222; transform: scale(0.97); }
+  .container { padding: 8px 10px; max-width: 720px; margin: 0 auto; }
+  .section { margin: 14px 0 18px; }
+  .section h2 {
+    color: var(--section); font-size: 17px; margin: 0 0 6px;
+    padding: 4px 8px; background: #002822; border-radius: 5px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .topic { margin: 8px 0 10px; }
+  .topic h3 {
+    color: var(--topic); font-size: 14px; margin: 6px 0 3px;
+    padding-left: 4px; border-left: 3px solid var(--topic);
+    text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .row { padding: 1px 0 1px 4px; }
+  .t { color: var(--term); font-weight: 600; }     /* term */
+  .a { color: var(--answer); }                      /* answer */
+  .n { color: var(--num); }                         /* number/value */
+  .c { color: var(--crit); font-weight: 600; }      /* critical */
+  .s { color: var(--struct); }                      /* structure */
+  .w { color: var(--warn); }                        /* warning/vs */
+  .dim { color: var(--dim); font-size: 12.5px; }
+  .arrow { color: var(--dim); }
+  .table { display: grid; grid-template-columns: max-content 1fr; gap: 1px 10px;
+           padding: 2px 4px; }
+  .table > div { padding: 1px 0; }
+  .grid { display: grid; grid-template-columns: max-content 1fr; gap: 0 8px; }
+  .hidden { display: none !important; }
+  .nores { padding: 20px; text-align: center; color: var(--dim); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 6px 0; }
+  /* Apple Watch / very narrow */
+  @media (max-width: 220px) {
+    body { font-size: 13px; }
+    .topic h3 { font-size: 12px; }
+    .section h2 { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="nav">
+    <a href="#e1">Exam 1</a>
+    <a href="#e2">Exam 2</a>
+    <a href="#e3">Exam 3</a>
+    <a href="#e4">Last Part</a>
+    <a href="#anat">Anatomy</a>
+    <a href="#neur">Neurons</a>
+    <a href="#rest">Resting V</a>
+    <a href="#ap">Action Pot</a>
+    <a href="#syn">Synapse</a>
+    <a href="#meth">Methods</a>
+    <a href="#drug">Drugs</a>
+    <a href="#nt">NTs</a>
+    <a href="#tol">Tolerance</a>
+    <a href="#cls">Drug classes</a>
+    <a href="#coc">Cocaine</a>
+    <a href="#rew">Reward/ICSS</a>
+    <a href="#stress">Stress/HPA</a>
+    <a href="#emot">Emotion</a>
+    <a href="#fear">Fear/Amyg</a>
+    <a href="#lh">Learned Helpl</a>
+    <a href="#anx">Anxiety/BNST</a>
+    <a href="#dep">Depression</a>
+    <a href="#vis">Vision</a>
+    <a href="#col">Color</a>
+    <a href="#vc">Visual cortex</a>
+    <a href="#circ">Circadian/SCN</a>
+    <a href="#sleep">Sleep</a>
+    <a href="#mem">Memory/HM/LTP</a>
+    <a href="#stroke">Stroke</a>
+    <a href="#sz">Seizures</a>
+    <a href="#pd">Parkinson's</a>
+    <a href="#degen">Degeneration</a>
+    <a href="#gloss">Glossary</a>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ==================== EXAM 1 ==================== -->
+<div class="section" id="e1">
+  <h2>Exam 1 — Foundations</h2>
+
+  <div class="topic" id="hist">
+    <h3>History</h3>
+    <div class="row"><span class="t">Biopsych</span> = <span class="a">study of biological mechanisms of behavior &amp; experience</span></div>
+    <div class="row"><span class="t">Phineas Gage</span> <span class="dim">(1848)</span> — tamping rod thru frontal lobe → personality changed → showed <span class="c">personality/emotion tied to specific brain region</span></div>
+    <div class="row"><span class="t">Numbers</span> — <span class="n">~100B neurons</span>, each makes <span class="n">1k–10k connections</span></div>
+    <div class="row"><span class="t">Trephination</span> — drilling holes in skull, <span class="n">7000+ yrs old</span></div>
+    <div class="row"><span class="t">Mesopotamians</span> — emotion = <span class="s">liver</span></div>
+    <div class="row"><span class="t">Egyptians</span> — spirit/intellect = <span class="s">heart</span> (heart preserved at death)</div>
+    <div class="row"><span class="t">Aristotle</span> — heart (brain = "radiator")</div>
+    <div class="row"><span class="t">Hippocrates</span> <span class="dim">(~400 BC)</span> — <span class="c">brain = source of all intellect</span></div>
+    <div class="row"><span class="t">Galen</span> — mind in <span class="s">ventricles</span></div>
+    <div class="row"><span class="t">Edwin Smith Papyrus</span> <span class="dim">(~3000 BC)</span> — earliest mention of brain ("bumps and folds")</div>
+  </div>
+
+  <div class="topic" id="mind">
+    <h3>Mind/Brain Problem</h3>
+    <div class="row"><span class="t">Mind/brain problem</span> — relationship btwn mind &amp; brain</div>
+    <div class="row"><span class="t">Dualism</span> — mind &amp; brain <span class="c">different substances</span>, exist independently</div>
+    <div class="row"><span class="t">Monism</span> — mind &amp; brain are the <span class="c">same</span></div>
+    <div class="row"><span class="t">Materialism</span> — everything is <span class="c">physical</span></div>
+    <div class="row"><span class="t">Descartes</span> — <span class="c">DUALIST</span>; mind ↔ brain via <span class="s">pineal gland</span></div>
+  </div>
+
+  <div class="topic" id="phren">
+    <h3>Phrenology</h3>
+    <div class="row"><span class="t">Inventor</span> — <span class="s">Franz Joseph Gall</span></div>
+    <div class="row"><span class="t">Idea</span> — read skull bumps for character</div>
+    <div class="row"><span class="t">Importance</span> — wrong, BUT introduced <span class="c">localization of function</span></div>
+  </div>
+
+  <div class="topic" id="goals">
+    <h3>Goals of Biopsych</h3>
+    <div class="row">1. How does brain function?</div>
+    <div class="row">2. Improve normal functioning?</div>
+    <div class="row">3. What goes wrong?</div>
+    <div class="row">4. Prevent/cure disease?</div>
+    <div class="row"><span class="t">How achieved</span> — observe brain w/ environmental change; associate abnormal behavior w/ brain deficits</div>
+  </div>
+
+  <div class="topic" id="cases">
+    <h3>Cases</h3>
+    <div class="row"><span class="t">Agnosia</span> — <span class="a">can't recognize objects/persons/sounds despite intact senses</span>; usually temporal lobe damage</div>
+    <div class="row"><span class="t">Object agnosia</span> — can't recognize objects</div>
+    <div class="row"><span class="t">Unilateral neglect</span> — <span class="c">ignore opposite side of damage</span>; right brain damage → ignore <span class="w">LEFT</span> (food, doorways, shaving). NOT visual acuity loss.</div>
+  </div>
+
+  <!-- ANATOMY -->
+  <div class="topic" id="anat">
+    <h3>Nervous System Divisions</h3>
+    <div class="row"><span class="t">CNS</span> = brain + spinal cord</div>
+    <div class="row"><span class="t">PNS</span> = somatic + autonomic</div>
+    <div class="row"><span class="t">Autonomic</span> = sympathetic (fight/flight) + parasympathetic (rest/digest)</div>
+    <div class="row"><span class="t">Afferent</span> = arrive (sensory IN)</div>
+    <div class="row"><span class="t">Efferent</span> = exit (motor OUT)</div>
+    <div class="row"><span class="t">Nucleus</span> = cell bodies in CNS · <span class="t">Ganglion</span> = cell bodies in PNS</div>
+    <div class="row"><span class="t">Gray matter</span> = cell bodies · <span class="t">White matter</span> = myelinated fibers</div>
+    <div class="row"><span class="t">Sulcus/Fissure</span> = grooves · <span class="t">Gyrus</span> = bumps</div>
+  </div>
+
+  <div class="topic">
+    <h3>Arousal Regions</h3>
+    <div class="row"><span class="t">Reticular formation</span> — <span class="a">~100 cell groups; arousal + cardiac/respiratory reflexes</span>; damage → <span class="c">coma</span></div>
+    <div class="row"><span class="t">Pons</span> — connects hindbrain ↔ midbrain/forebrain</div>
+    <div class="row"><span class="t">Raphe nuclei</span> <span class="dim">(in pons)</span> — sleep/arousal · <span class="s">5-HT</span> source</div>
+    <div class="row"><span class="t">Locus coeruleus</span> <span class="dim">(in pons)</span> — arousal · <span class="s">NE</span> source</div>
+  </div>
+
+  <div class="topic">
+    <h3>Sensory Processing</h3>
+    <div class="row"><span class="t">Thalamus</span> = <span class="a">relay station</span></div>
+    <div class="row"><span class="t">MGN</span> (medial geniculate) — <span class="c">auditory</span></div>
+    <div class="row"><span class="t">LGN</span> (lateral geniculate) — <span class="c">visual</span></div>
+    <div class="row"><span class="t">Tectum</span> — inferior colliculus = auditory; superior colliculus = visual</div>
+    <div class="row"><span class="t">Cortex</span> — conscious perception (primary + secondary)</div>
+  </div>
+
+  <div class="topic">
+    <h3>Movement</h3>
+    <div class="row"><span class="t">Cerebellum</span> — <span class="a">motor coordination</span>; <span class="c">targeted by alcohol</span>; damage → motor incoordination/posture</div>
+    <div class="row"><span class="t">Substantia nigra</span> — <span class="c">degenerates in Parkinson's</span></div>
+    <div class="row"><span class="t">Basal ganglia</span> = <span class="s">caudate + putamen + globus pallidus</span> (caudate+putamen = striatum); function: motor/habit</div>
+  </div>
+
+  <div class="topic">
+    <h3>Motivation/Emotion</h3>
+    <div class="row"><span class="t">Limbic system</span> = <span class="s">amygdala, hippocampus, septum, cingulate cortex</span></div>
+    <div class="row"><span class="t">Hypothalamus</span> — motivated behaviors; homeostasis</div>
+    <div class="row"><span class="t">Homeostasis</span> — maintain stable conditions; resistance to change</div>
+  </div>
+
+  <div class="topic">
+    <h3>Cortex &amp; Lobes</h3>
+    <div class="row"><span class="t">Cortex functions</span> — thought, voluntary movement, language, reasoning, perception</div>
+    <div class="row"><span class="t">Occipital</span> = <span class="c">vision</span></div>
+    <div class="row"><span class="t">Temporal</span> = <span class="c">audition</span></div>
+    <div class="row"><span class="t">Parietal</span> = <span class="c">touch (somatosensation)</span></div>
+    <div class="row"><span class="t">Frontal</span> = <span class="c">motor + executive</span></div>
+    <div class="row"><span class="t">Aphasia</span> — <span class="a">impaired ability to use/comprehend words</span></div>
+    <div class="row"><span class="t">Layer I</span> — fibers only</div>
+    <div class="row"><span class="t">Layers II, IV</span> — granule/stellate <span class="c">INTERNEURONS</span></div>
+    <div class="row"><span class="t">Layers III, V</span> — pyramidal <span class="c">PROJECTION NEURONS</span></div>
+    <div class="row"><span class="t">Layer VI</span> — mixed</div>
+    <div class="row"><span class="t">Projection</span> — leave region · <span class="t">Interneuron</span> — stay local</div>
+  </div>
+
+  <div class="topic">
+    <h3>Meninges, CSF, BBB</h3>
+    <div class="row"><span class="t">Meninges</span> (out→in) — <span class="c">DURA → ARACHNOID → PIA</span></div>
+    <div class="row"><span class="t">CSF location</span> — ventricles + subarachnoid space (btwn arachnoid &amp; pia)</div>
+    <div class="row"><span class="t">Blood vessels</span> — subarachnoid space + thru tissue</div>
+    <div class="row"><span class="t">CSF flow</span> — choroid plexus → lateral ventricle → 3rd ventricle → cerebral aqueduct → 4th ventricle → subarachnoid → arachnoid granulations → blood</div>
+    <div class="row"><span class="t">Brain weight</span> — <span class="n">1400 g → 80 g</span> effective (floats in CSF)</div>
+    <div class="row"><span class="t">Hydrocephalus</span> — <span class="a">CSF buildup → ↑ pressure</span></div>
+    <div class="row"><span class="t">Hydrocephalus causes</span> — (1) blood not absorbing CSF, OR (2) flow blocked</div>
+    <div class="row"><span class="t">Hydrocephalus tx</span> — <span class="c">shunt</span></div>
+    <div class="row"><span class="t">2 main brain arteries</span> — <span class="c">internal carotid + vertebral</span> → Circle of Willis</div>
+    <div class="row"><span class="t">BBB function</span> — <span class="a">protect brain from foreign substances; maintain constant environment</span></div>
+    <div class="row"><span class="t">BBB broken by</span> — <span class="c">hypertension, infection, microwaves, radiation, trauma, immaturity at birth</span>; weak at chemical trigger zone (vomiting)</div>
+  </div>
+
+  <div class="topic">
+    <h3>Spinal Cord &amp; Cranial Nerves</h3>
+    <div class="row"><span class="t">Dorsal horn</span> = <span class="c">sensory IN</span></div>
+    <div class="row"><span class="t">Ventral horn</span> = <span class="c">motor OUT</span></div>
+    <div class="row"><span class="t">Cranial nerves</span> — carry sensory, motor, or both</div>
+  </div>
+
+  <div class="topic" id="neur">
+    <h3>Neurons &amp; Glia</h3>
+    <div class="row"><span class="t">Cajal / Neuron Doctrine</span> — <span class="a">nervous system = SEPARATE cells</span> (not continuous net)</div>
+    <div class="row"><span class="t">Parts of neuron</span> — dendrites (receive) → soma → axon → terminal (release NT)</div>
+    <div class="row"><span class="t">Dendritic spine</span> — <span class="a">small protrusion on dendrite; makes connections</span>; allows plasticity</div>
+    <div class="row"><span class="t">Neuron shapes</span> — unipolar, bipolar, multipolar</div>
+    <div class="row"><span class="t">Oligodendrocytes</span> — <span class="c">myelin in CNS</span> (1 cell, many axons)</div>
+    <div class="row"><span class="t">Schwann cells</span> — <span class="c">myelin in PNS</span> (1 cell, 1 axon segment)</div>
+    <div class="row"><span class="t">Astrocytes</span> — <span class="c">BBB</span> (glial feet), support, blood→neuron transport</div>
+    <div class="row"><span class="t">Microglia</span> — <span class="c">immune cells</span> of NS</div>
+  </div>
+
+  <div class="topic" id="rest">
+    <h3>Resting Potential</h3>
+    <div class="row"><span class="t">Resting V</span> — <span class="c"><span class="n">~ −70 mV</span></span></div>
+    <div class="row"><span class="t">Na⁺</span> — outside, +; equilib <span class="n">+55 mV</span></div>
+    <div class="row"><span class="t">K⁺</span> — inside, +; equilib <span class="n">−85 mV</span></div>
+    <div class="row"><span class="t">Cl⁻</span> — outside, −; equilib <span class="n">−66 mV</span></div>
+    <div class="row"><span class="t">Protein (P⁻)</span> — inside, −</div>
+    <div class="row"><span class="t">Ca²⁺</span> — outside, + (similar pressures to Na)</div>
+    <div class="row"><span class="t">Forces</span> — electrostatic + chemical concentration gradient</div>
+    <div class="row"><span class="t">Na⁺ pushed</span> — IN (both forces)</div>
+    <div class="row"><span class="t">K⁺ pushed</span> — IN (electro), OUT (chemical)</div>
+    <div class="row"><span class="t">Cl⁻ pushed</span> — OUT (electro), IN (chemical)</div>
+    <div class="row"><span class="t">Most permeable at rest</span> — <span class="c">K⁺</span> → resting V sits near K⁺ equilib</div>
+    <div class="row"><span class="t">Channel gating</span> — leak (always open), temp, acidity, mechanical (touch), electrical (voltage), chemical (ligand)</div>
+  </div>
+</div>
+
+<!-- ==================== EXAM 2 ==================== -->
+<div class="section" id="e2">
+  <h2>Exam 2 — Electrical / Chemical / Methods</h2>
+
+  <div class="topic" id="ap">
+    <h3>Action Potential</h3>
+    <div class="row"><span class="t">Step 1</span> — threshold → voltage-gated Na⁺ open → Na⁺ rushes <span class="c">IN</span> (depolarize)</div>
+    <div class="row"><span class="t">Step 2</span> — Na⁺ channels <span class="c">INACTIVATE</span> at peak</div>
+    <div class="row"><span class="t">Step 3</span> — voltage-gated K⁺ open → K⁺ rushes <span class="c">OUT</span> (repolarize)</div>
+    <div class="row"><span class="t">Step 4</span> — brief hyperpolarization</div>
+    <div class="row"><span class="t">Step 5</span> — Na/K pump returns to rest</div>
+    <div class="row"><span class="t">Absolute refractory</span> — <span class="c">Na⁺ inactivated</span>; <span class="w">NO AP possible</span></div>
+    <div class="row"><span class="t">Relative refractory</span> — <span class="c">hyperpolarized</span>; AP possible but harder</div>
+    <div class="row"><span class="t">Na/K pump</span> — <span class="c"><span class="n">3 Na⁺ OUT, 2 K⁺ IN</span></span> (uses ATP)</div>
+    <div class="row"><span class="t">Why no backwards prop</span> — behind is in <span class="c">absolute refractory</span></div>
+    <div class="row"><span class="t">Speed</span> — bigger axon = faster · myelination = faster (saltatory)</div>
+    <div class="row"><span class="t">Fastest</span> — <span class="c">large myelinated</span> · <span class="t">Slowest</span> — small unmyelinated</div>
+    <div class="row"><span class="t">EPSP</span> — depolarizing (excitatory)</div>
+    <div class="row"><span class="t">IPSP</span> — hyperpolarizing (inhibitory)</div>
+    <div class="row"><span class="t">Summation</span> — at axon hillock; spatial (different sites) + temporal (close in time)</div>
+  </div>
+
+  <div class="topic" id="syn">
+    <h3>Synapse</h3>
+    <div class="row"><span class="t">Step 1 Exocytosis</span> — AP → voltage-gated <span class="c">Ca²⁺</span> open → Ca²⁺ enters → vesicle fusion (REQUIRES Ca²⁺)</div>
+    <div class="row"><span class="t">Step 2 Release</span> — NT into cleft</div>
+    <div class="row"><span class="t">Step 3 Binding</span> — NT to postsyn receptors → EPSP/IPSP</div>
+    <div class="row"><span class="t">Step 4 Deactivation</span> — <span class="c">reuptake, enzymatic degradation, diffusion</span></div>
+    <div class="row"><span class="t">Otto Loewi (1921)</span> — frog heart → proved <span class="c">chemical neurotransmission</span>; "vagusstoff" = <span class="s">ACh</span></div>
+    <div class="row"><span class="t">Electrical synapse</span> (gap junction) — <span class="c">FASTER</span>, no delay</div>
+    <div class="row"><span class="t">Chemical synapse</span> — slower but flexible/modulatory</div>
+    <div class="row"><span class="t">Ionotropic</span> — <span class="c">FASTER</span>; channel = part of receptor (e.g., ACh nicotinic)</div>
+    <div class="row"><span class="t">Metabotropic</span> — slower; G-protein → 2nd messenger; <span class="c">long-term effects</span> (e.g., NE)</div>
+  </div>
+
+  <div class="topic" id="meth">
+    <h3>Methods — Stains/Tracers</h3>
+    <div class="row"><span class="t">Histology</span> — thin tissue sections + stains</div>
+    <div class="row"><span class="t">Golgi silver stain</span> — <span class="c">WHOLE neurons</span> (few cells, randomly)</div>
+    <div class="row"><span class="t">Nissl stain</span> — <span class="c">CELL BODIES only</span> (Nissl bodies / RER)</div>
+    <div class="row"><span class="t">Myelin stain</span> — fiber tracts</div>
+    <div class="row"><span class="t">Retrograde tracer</span> (HRP) — terminals → cell body → finds <span class="c">INPUTS</span></div>
+    <div class="row"><span class="t">Anterograde tracer</span> (PHA-L) — cell body → terminals → finds <span class="c">OUTPUTS</span></div>
+    <div class="row"><span class="t">Immunohistochemistry</span> — <span class="c">antibodies</span> vs. specific molecule (receptor, NT)</div>
+  </div>
+
+  <div class="topic">
+    <h3>Imaging — Structure vs Function</h3>
+    <div class="row"><span class="t">CT</span> — <span class="w">structure</span> (X-rays rotated, cross-section)</div>
+    <div class="row"><span class="t">MRI</span> — <span class="w">structure</span> (H atoms in magnet) — better res than CT</div>
+    <div class="row"><span class="t">fMRI</span> — <span class="c">function</span> (BOLD signal)</div>
+    <div class="row"><span class="t">PET</span> — <span class="c">function</span>; <span class="c">inject 2-deoxy-glucose or O-15</span>; active neurons use more</div>
+    <div class="row"><span class="t">EEG</span> — <span class="c">function</span> (scalp electrical, contaminated by skin/muscle)</div>
+    <div class="row"><span class="t">EEG diagnostic for</span> — <span class="c">epilepsy, sleep, brain death</span></div>
+    <div class="row"><span class="t">Evoked potential</span> — EEG change due to momentary stimulus (e.g., auditory EP for hearing tests)</div>
+  </div>
+
+  <div class="topic">
+    <h3>Invasive Methods</h3>
+    <div class="row"><span class="t">Stereotaxic device</span> — <span class="a">precise 3-D targeting via brain atlas</span></div>
+    <div class="row"><span class="t">Lesion</span> — damage to assess function (electrical, chemical, reversible); tells what region <span class="c">DOES</span></div>
+    <div class="row"><span class="t">Stimulation</span> — activate region to see what it <span class="c">PRODUCES</span> (e.g., DBS)</div>
+    <div class="row"><span class="t">Microinjection</span> — drug into specific region (or ventricle for whole CNS)</div>
+    <div class="row"><span class="t">Unit recording</span> — extracellular, intracellular, patch clamp</div>
+    <div class="row"><span class="t">Knockout mouse</span> — <span class="c">gene deleted</span>; diff from wild-type = gene's function</div>
+  </div>
+
+  <div class="topic">
+    <h3>Animal Use &amp; IACUC</h3>
+    <div class="row"><span class="t">For animal use</span> — human health, animal health, evolutionary insights</div>
+    <div class="row"><span class="t">Against</span> — too different from humans; all animals deserve respect</div>
+    <div class="row"><span class="t">IACUC</span> = Institutional Animal Care &amp; Use Committee</div>
+    <div class="row"><span class="t">IACUC functions</span> — review protocols, inspect facilities <span class="n">every 6 mo</span>, can <span class="c">SUSPEND</span> activities</div>
+  </div>
+
+  <div class="topic" id="drug">
+    <h3>Drugs — Pharmacokinetics</h3>
+    <div class="row"><span class="t">Psychoactive drug</span> — <span class="a">alters mood/thought/behavior</span>; MUST cross BBB</div>
+    <div class="row"><span class="t">Distribution time</span> — <span class="n">~1 minute</span> (heart pumps 5 L/min)</div>
+    <div class="row"><span class="t">Routes (fast→slow)</span> — inhalation, IV, intranasal, IM, subQ, oral, transdermal</div>
+    <div class="row"><span class="t">Antihistamines</span> — "non-drowsy" = <span class="c">don't cross BBB</span> as much</div>
+    <div class="row"><span class="t">Heroin vs morphine</span> — heroin = diacetyl morphine; <span class="c">crosses BBB ~3× better</span> → more potent</div>
+    <div class="row"><span class="t">Acetaldehyde</span> — <span class="a">toxic alcohol metabolite</span>; like formaldehyde; causes hangovers</div>
+    <div class="row"><span class="t">Antabuse (disulfiram)</span> — <span class="c">blocks aldehyde dehydrogenase</span> → acetaldehyde builds → sickness with alcohol</div>
+  </div>
+
+  <div class="topic" id="nt">
+    <h3>Neurotransmitters</h3>
+    <div class="row"><span class="t">Amino acids (4)</span> — glutamate, GABA, glycine, aspartate</div>
+    <div class="row"><span class="t">Catecholamines</span> (from tyrosine) — DA, NE, epinephrine</div>
+    <div class="row"><span class="t">Indolamine</span> (from tryptophan) — serotonin (5-HT)</div>
+    <div class="row"><span class="t">DA source</span> — <span class="s">substantia nigra</span> (→ basal ganglia/movement) + <span class="s">VTA</span> (→ reward)</div>
+    <div class="row"><span class="t">NE source</span> — <span class="s">locus coeruleus</span></div>
+    <div class="row"><span class="t">5-HT source</span> — <span class="s">raphe nuclei</span> (esp. dorsal raphe)</div>
+    <div class="row"><span class="t">Excitation NT</span> — <span class="c">glutamate</span>; cortical projection neurons</div>
+    <div class="row"><span class="t">Inhibition NT</span> — <span class="c">GABA</span>; interneurons</div>
+    <div class="row"><span class="t">Agonist</span> — mimics NT</div>
+    <div class="row"><span class="t">Antagonist</span> — blocks NT</div>
+    <div class="row"><span class="t">Drug mechanisms</span> — alter synthesis, storage/release, breakdown/reuptake, receptor binding</div>
+    <div class="row"><span class="t">Dose-response curve</span> — dose vs effect; plateau = <span class="c">all receptors bound</span>; different effects → different curves</div>
+  </div>
+</div>
+
+<!-- ==================== EXAM 3 ==================== -->
+<div class="section" id="e3">
+  <h2>Exam 3 — Tolerance / Stress / Emotion</h2>
+
+  <div class="topic" id="tol">
+    <h3>Tolerance &amp; Withdrawal</h3>
+    <div class="row"><span class="t">Tolerance</span> — <span class="a">↓ response over time</span>; curve shifts <span class="c">RIGHT</span></div>
+    <div class="row"><span class="t">Metabolic tolerance</span> — body better at metabolizing drug</div>
+    <div class="row"><span class="t">Functional tolerance</span> — cellular (receptor downreg) OR conditioned (Pavlovian)</div>
+    <div class="row"><span class="t">Cross-tolerance</span> — tolerance to one drug → tolerance to similar drug</div>
+    <div class="row"><span class="t">Sensitization</span> — <span class="c">opposite of tolerance</span>; curve shifts <span class="c">LEFT</span> (cocaine, amphetamine)</div>
+    <div class="row"><span class="t">Withdrawal</span> — <span class="a">opposite of drug effects</span></div>
+    <div class="row"><span class="t">Opiate effect</span> — drowsy, constipation, ↓respiration, ↓HR</div>
+    <div class="row"><span class="t">Opiate withdrawal</span> — <span class="w">insomnia, diarrhea, ↑respiration, ↑HR/BP</span></div>
+    <div class="row"><span class="t">Alcohol withdrawal</span> — <span class="c">more severe than opiates; can be DEADLY</span>; lasts weeks</div>
+    <div class="row"><span class="t">Alcohol w/d over-excitation</span> — chronic alcohol = GABA agonist + glutamate antagonist → brain compensates (↓ GABA receptors, ↑ glutamate receptors) → withdrawal = <span class="w">too little inhibition + too much excitation</span> → seizures</div>
+    <div class="row"><span class="t">Conditioned tolerance evidence</span> — Siegel: rats overdose on usual morphine dose in <span class="c">unfamiliar environments</span>; max tolerance in drug-paired env</div>
+    <div class="row"><span class="t">Pavlovian model</span> — env (CS) + drug (US) → conditioned compensatory response opposite to drug effect</div>
+  </div>
+
+  <div class="topic" id="cls">
+    <h3>Drug Classes (BLUE drugs starred)</h3>
+    <div class="row"><span class="t">Caffeine</span> — <span class="c">adenosine antagonist</span></div>
+    <div class="row"><span class="t">★ Nicotine</span> — <span class="c">ACh agonist</span></div>
+    <div class="row"><span class="t">★ Cocaine</span> — <span class="c">DA agonist</span> (blocks DA reuptake)</div>
+    <div class="row"><span class="t">★ Amphetamine</span> — <span class="c">DA agonist</span> (↑ release + blocks reuptake)</div>
+    <div class="row"><span class="t">★ Alcohol</span> — <span class="c">GABA agonist + glutamate antagonist</span></div>
+    <div class="row"><span class="t">★ Valium (benzo)</span> — <span class="c">GABA agonist</span> (positive allosteric mod of GABA-A)</div>
+    <div class="row"><span class="t">★ Buspar</span> — <span class="c">5-HT agonist</span></div>
+    <div class="row"><span class="t">★ Morphine</span> (heroin, methadone, fentanyl, codeine) — <span class="c">opiate agonist</span></div>
+    <div class="row"><span class="t">★ LSD</span> — <span class="c">5-HT agonist</span></div>
+    <div class="row"><span class="t">Marijuana</span> — cannabinoid agonist · <span class="t">Mescaline / MDMA</span> — 5-HT · <span class="t">Ketamine</span> — NMDA antagonist</div>
+  </div>
+
+  <div class="topic" id="coc">
+    <h3>Cocaine</h3>
+    <div class="row"><span class="t">Short-term</span> — <span class="a">↑ energy, ↓ appetite, mental alertness, ↑ HR/BP, constricted vessels, ↑ temp, dilated pupils</span></div>
+    <div class="row"><span class="t">Long-term</span> — <span class="a">addiction, irritability, restlessness, paranoia, auditory hallucinations</span></div>
+    <div class="row"><span class="t">Medical complications</span> — <span class="a">arrhythmias, heart attacks, chest pain, respiratory failure, strokes, seizures, headaches, abdominal pain, nausea</span></div>
+    <div class="row"><span class="t">Cellular effect</span> — <span class="c">blocks DA reuptake</span> → DA stays in synapse longer</div>
+    <div class="row"><span class="t">Pathway</span> — <span class="c">mesocorticolimbic</span> (VTA → nucleus accumbens)</div>
+    <div class="row"><span class="t">Chronic abusers</span> — <span class="c">↓ DA + ↓ DA receptors</span></div>
+  </div>
+
+  <div class="topic" id="rew">
+    <h3>Reward / ICSS / Microdialysis</h3>
+    <div class="row"><span class="t">Olds &amp; Milner (1954)</span> — <span class="a">rats lever-press 1000s/hr for self-stimulation</span>; cross electrified floor; ignore food/water/sleep</div>
+    <div class="row"><span class="t">ICSS sites</span> — <span class="s">hypothalamus, septum, nucleus accumbens, VTA</span>, medial forebrain bundle (most effective)</div>
+    <div class="row"><span class="t">DA-ICSS-addiction</span> — sites overlap mesolimbic DA pathway; ICSS → ↑ DA in nucleus accumbens; DA agonists ↑ ICSS; DA antagonists block; lesions of mesolimbocortical pathway block</div>
+    <div class="row"><span class="t">"Wanting vs liking"</span> — addiction = ↑ wanting (not necessarily liking)</div>
+    <div class="row"><span class="t">Microdialysis</span> — <span class="a">probe in brain → samples → HPLC</span> measures NT concentration</div>
+    <div class="row"><span class="t">Conditioned place preference</span> — drug-paired chamber preferred → drug was rewarding; <span class="c">DA agonists produce CPP</span></div>
+  </div>
+
+  <div class="topic" id="stress">
+    <h3>Stress &amp; HPA Axis</h3>
+    <div class="row"><span class="t">Stress definition</span> — <span class="a">any deviation of the body from homeostasis</span></div>
+    <div class="row"><span class="t">Hans Selye</span> — <span class="c">first to systematically study stress</span>; suggested stress → illness</div>
+    <div class="row"><span class="t">3 stress systems</span> — endocrine (HPA), autonomic (sympathetic), behavioral (brain)</div>
+    <div class="row"><span class="t">HPA axis</span> — <span class="c">hypothalamus → CRF → pituitary → ACTH → adrenal cortex → cortisol</span></div>
+    <div class="row"><span class="t">Cortisol feedback</span> — negatively feeds back, <span class="c">inhibits HPA</span></div>
+    <div class="row"><span class="t">Cortisol effects</span> — <span class="a">↑ glucose synthesis, ↓ glucose uptake into fat/muscle, breaks down fat, suppresses immune system, affects fear behavior</span></div>
+    <div class="row"><span class="t">Cushing's Syndrome</span> — hypercortisolism (any cause incl. steroid meds)</div>
+    <div class="row"><span class="t">Cushing's Disease</span> — <span class="c">pituitary tumor</span> → ↑ ACTH → ↑ cortisol</div>
+    <div class="row"><span class="t">Sympathetic effects</span> — <span class="a">↑ blood to muscles, ↑ HR, ↑ blood sugar, piloerection</span>; releases <span class="c">adrenaline (epinephrine)</span> from adrenal glands</div>
+    <div class="row"><span class="t">Both endocrine + autonomic</span> — <span class="c">CATABOLIC</span> — mobilize energy (glucose, fat)</div>
+  </div>
+
+  <div class="topic" id="emot">
+    <h3>Emotion Theories</h3>
+    <div class="row"><span class="t">Darwin observed</span> — expressions same in animals, young children, <span class="c">born blind</span> → INNATE</div>
+    <div class="row"><span class="t">Darwin concluded</span> — <span class="a">expressions evolved from behaviors signaling next action</span>; opposite messages = opposite behaviors; retained if helpful for survival</div>
+    <div class="row"><span class="t">James-Lange</span> — <span class="c">physiology FIRST → interpretation = emotion</span> ("I run → I'm afraid")</div>
+    <div class="row"><span class="t">Cannon-Bard</span> — <span class="c">physiology + emotion SIMULTANEOUSLY</span></div>
+    <div class="row"><span class="t">Data vs James-Lange</span> — epinephrine injection ≠ emotion; ppl w/o peripheral sensation still feel emotion</div>
+  </div>
+
+  <div class="topic" id="fear">
+    <h3>Fear &amp; Amygdala</h3>
+    <div class="row"><span class="t">Fear in rodents (signs)</span> — <span class="a">freezing, ↓ HR, ↓ salivation, ↑ startle, defecation, hypoalgesia, ↓ activity</span></div>
+    <div class="row"><span class="t">Structure for conditioned fear</span> — <span class="c">amygdala</span></div>
+    <div class="row"><span class="t">Amygdala damage evidence</span> — every fear measure impaired (rabbit, rat, mouse, humans w/ Urbach-Wiethe)</div>
+    <div class="row"><span class="t">Basolateral complex (BLA + LA)</span> — <span class="c">INPUT</span>; <span class="a">where CS-US LEARNING happens</span></div>
+    <div class="row"><span class="t">Central nucleus (CE)</span> — <span class="c">OUTPUT</span>; <span class="a">coordinates fear response</span> (HR via dMNV, freezing via PAG, startle via PnC)</div>
+    <div class="row"><span class="t">Kluver-Bucy</span> (medial temporal lobe damage) — <span class="a">emotional blunting, hyperphagia, inappropriate sexual behavior, visual agnosia</span></div>
+    <div class="row"><span class="t">Extinction</span> — present CS w/o US → fear ↓; <span class="c">NOT forgetting, IS new learning</span> (CS now safe)</div>
+    <div class="row"><span class="t">Extinction requires</span> — <span class="c">amygdala</span> (turning off blocks extinction)</div>
+    <div class="row"><span class="t">D-cycloserine</span> — <span class="c">facilitates extinction</span> (NMDA partial agonist) → adjunct to therapy (elevator phobia, acrophobia)</div>
+  </div>
+
+  <div class="topic" id="lh">
+    <h3>Learned Helplessness</h3>
+    <div class="row"><span class="t">Paradigm</span> — 2 groups, <span class="c">SAME amount shock</span>; only diff = <span class="c">controllability</span> (turn wheel to stop)</div>
+    <div class="row"><span class="t">What's manipulated</span> — <span class="c">controllability</span></div>
+    <div class="row"><span class="t">Effects (BLUE)</span> — <span class="a">less aggressive, ↓ social dominance, ↓ eating/drinking, don't interact, ↑ fear learning, ↑ ulcers</span></div>
+    <div class="row"><span class="t">Other effects</span> — less responsive to shock, less struggling, analgesia, learning impairments, anxiety, drugs more rewarding</div>
+    <div class="row"><span class="t">As depression model — for</span> — shares features (anhedonia, withdrawal, ulcers, anxiety); antidepressants reverse it</div>
+    <div class="row"><span class="t">As depression model — flaws</span> — misses negative thinking, suicidality</div>
+    <div class="row"><span class="t">Maier's interpretation</span> — <span class="a">models LACK OF CONTROL over stressors</span> (one component of depression/anxiety/PTSD)</div>
+    <div class="row"><span class="t">Uncontrollability → fight/flight</span> — <span class="c">↓ escape</span></div>
+    <div class="row"><span class="t">Uncontrollability → fear/anxiety</span> — <span class="c">↑</span></div>
+    <div class="row"><span class="t">Autoreceptor</span> — <span class="a">inhibitory presynaptic receptor; regulates own NT release; negative feedback</span></div>
+    <div class="row"><span class="t">DRN role</span> — activation = <span class="c">NECESSARY AND SUFFICIENT</span> for LH</div>
+    <div class="row"><span class="t">DRN evidence</span> — uncontrollable shock activates DRN 5-HT > controllable</div>
+    <div class="row"><span class="t">DRN sensitization</span> — ↓ <span class="s">5-HT1A autoreceptor</span> function → less neg feedback → more 5-HT release</div>
+    <div class="row"><span class="t">mPFC role</span> — <span class="c">inhibits DRN</span>; controllable stress activates mPFC → no LH</div>
+    <div class="row"><span class="t">mPFC critical fact</span> — <span class="c">shutting OFF mPFC = LH even with control</span></div>
+    <div class="row"><span class="t">mPFC functions</span> — executive control, inhibits lower regions, emotion regulation</div>
+  </div>
+
+  <div class="topic" id="anx">
+    <h3>Anxiety &amp; BNST</h3>
+    <div class="row"><span class="t">Anxiety brain hypothesis</span> — <span class="a">amygdala overactive</span> (PTSD fMRI confirms)</div>
+    <div class="row"><span class="t">BNST</span> = bed nucleus of stria terminalis</div>
+    <div class="row"><span class="t">Amygdala vs BNST (Walker &amp; Davis)</span> — <span class="c">amygdala = phasic, predictable, short-duration, cued FEAR</span>; <span class="c">BNST = sustained, unpredictable, long-duration, diffuse ANXIETY</span></div>
+    <div class="row"><span class="t">BNST critical for</span> — <span class="a">light-enhanced startle, CRF-enhanced startle, learned helplessness</span></div>
+    <div class="row"><span class="t">Goode &amp; Maren (2017)</span> — BNST organizes responses to stimuli that <span class="c">poorly predict WHEN danger occurs</span></div>
+    <div class="row"><span class="t">BNST in humans</span> — anticipatory anxiety, sustained unpredictable threat, hypervigilant monitoring</div>
+    <div class="row"><span class="t">Allosteric modulator</span> — <span class="a">binds DIFFERENT site from NT; changes how NT activates receptor</span></div>
+    <div class="row"><span class="t">Valium mechanism</span> — <span class="c">positive allosteric mod of GABA-A</span> → makes GABA more effective → less anxiety</div>
+    <div class="row"><span class="t">5-HT in anxiety</span> — <span class="w">CONFUSING</span>; depends on receptor subtype, chronic vs acute, brain region; 5-HT1A KO mice → ↑ anxiety</div>
+  </div>
+</div>
+
+<!-- ==================== LAST PART ==================== -->
+<div class="section" id="e4">
+  <h2>Last Part — Depression / Vision / Sleep / Memory / Disorders</h2>
+
+  <div class="topic" id="dep">
+    <h3>Antidepressants &amp; Depression</h3>
+    <div class="row"><span class="t">MAOIs</span> (iproniazid) — <span class="c">block MAO → ↑ all monoamines (DA, NE, 5-HT)</span>; <span class="w">MOST SEVERE side effects</span> (tyramine → hypertensive crisis)</div>
+    <div class="row"><span class="t">Tricyclics (TCAs)</span> (imipramine) — <span class="c">block reuptake of NE + 5-HT</span>; anticholinergic, cardiac, sedation</div>
+    <div class="row"><span class="t">SSRIs</span> (Prozac, Zoloft, Luvox) — <span class="c">block 5-HT reuptake only</span>; mildest side effects</div>
+    <div class="row"><span class="t">Monoamine theory</span> — tryptophan depletion → depressive sx; PET shows ↓ 5-HT receptor binding</div>
+    <div class="row"><span class="t">Genetic</span> — <span class="n">~40%</span> twin concordance</div>
+    <div class="row"><span class="t">Stress-diathesis hypothesis</span> — <span class="a">HPA hyperactivity, ↑ CRF in depressed; SSRIs may normalize</span></div>
+    <div class="row"><span class="t">Neurogenic theory</span> — hippocampus impaired in depression; <span class="c">chronic antidepressants ↑ hippocampal neurogenesis</span></div>
+  </div>
+
+  <div class="topic" id="vis">
+    <h3>Vision — Eye &amp; Retina</h3>
+    <div class="row"><span class="t">Sensation</span> — <span class="a">detecting/encoding energy</span></div>
+    <div class="row"><span class="t">Perception</span> — <span class="a">organizing sensations into awareness</span></div>
+    <div class="row"><span class="t">Sensory receptors</span> — specialized neurons; energy → neural signal</div>
+    <div class="row"><span class="t">Receptor potential</span> — local depolarization/hyperpolarization</div>
+    <div class="row"><span class="t">Transduction</span> — energy → neural signal</div>
+    <div class="row"><span class="t">Retina</span> — rear surface w/ receptors</div>
+    <div class="row"><span class="t">Fovea</span> — <span class="a">tiny acute-vision area; cones only, no blood vessels in front, 1:1:1 ratio (cone:bipolar:ganglion); small RFs = HIGH ACUITY</span></div>
+    <div class="row"><span class="t">Periphery</span> — rods, lots converge → large RFs, sensitive in dim light</div>
+    <div class="row"><span class="t">Blind spot</span> — where optic nerve exits</div>
+    <div class="row"><span class="t">Optic nerve</span> — ganglion cell axons</div>
+    <div class="row"><span class="t">Photoreceptors</span> — rods + cones; <span class="c">transduce light</span></div>
+    <div class="row"><span class="t">Bipolar cells</span> — photoreceptors → ganglion cells</div>
+    <div class="row"><span class="t">Ganglion cells</span> — → optic nerve</div>
+    <div class="row"><span class="t">Amacrine/horizontal</span> — modulate (lateral inhibition)</div>
+    <div class="row"><span class="t">Rods</span> — periphery, faint light, NO color, low acuity</div>
+    <div class="row"><span class="t">Cones</span> — fovea, bright light, COLOR (3 types), high acuity</div>
+    <div class="row"><span class="t">Photopigments</span> — chemicals that release energy when struck by light; opsin + retinal; light breaks them apart</div>
+    <div class="row"><span class="t">Photoreceptor in DARK</span> — <span class="c">DEPOLARIZED, releases MORE glutamate</span></div>
+    <div class="row"><span class="t">Photoreceptor in LIGHT</span> — <span class="c">HYPERPOLARIZES, releases LESS glutamate</span></div>
+    <div class="row"><span class="t">Photoreceptor NT</span> — <span class="c">glutamate</span> (inhibits bipolar)</div>
+    <div class="row"><span class="t">Bipolar in light</span> — depolarizes (less inhibition) → ganglion fires AP</div>
+    <div class="row"><span class="t">Cells with APs</span> — <span class="c">ONLY ganglion cells</span> (photoreceptors + bipolar = graded only)</div>
+  </div>
+
+  <div class="topic" id="col">
+    <h3>Color &amp; Lateral Inhibition</h3>
+    <div class="row"><span class="t">Trichromatic (Young-Helmholtz)</span> — <span class="a">3 cone types tuned to different wavelengths</span></div>
+    <div class="row"><span class="t">Trichromatic incomplete</span> — <span class="w">doesn't explain afterimages or "no reddish-green"</span></div>
+    <div class="row"><span class="t">Opponent-process</span> — <span class="a">paired opposites: red-green, blue-yellow, black-white</span>; retina has red-green + blue-yellow color ganglion cells</div>
+    <div class="row"><span class="t">Opponent-process explains</span> — afterimages</div>
+    <div class="row"><span class="t">Opponent-process incomplete</span> — doesn't fully explain color constancy</div>
+    <div class="row"><span class="t">Negative afterimage</span> — stare at color → see opposite (selective adaptation)</div>
+    <div class="row"><span class="t">Color constancy</span> — <span class="a">recognize color despite lighting changes</span></div>
+    <div class="row"><span class="t">Retinex theory</span> — <span class="a">cortex compares retinal areas to determine color/brightness</span>; explains constancy</div>
+    <div class="row"><span class="t">Color blindness most common</span> — <span class="c">red &amp; green cones share same photopigment</span></div>
+    <div class="row"><span class="t">Color blindness X-linked</span> — <span class="n">8% men, 1% women</span> → MUCH more common in <span class="c">men</span></div>
+    <div class="row"><span class="t">Lateral inhibition</span> — <span class="a">active neuron inhibits neighbors</span></div>
+    <div class="row"><span class="t">Lateral inhibition function</span> — <span class="c">sharpens contrasts, emphasizes borders</span> → perceive shapes</div>
+    <div class="row"><span class="t">Receptive field</span> — part of visual field that excites/inhibits a neuron</div>
+  </div>
+
+  <div class="topic" id="vc">
+    <h3>Visual Cortex</h3>
+    <div class="row"><span class="t">Path</span> — retina → optic nerve → <span class="c">optic chiasm (cross midline)</span> → optic tract → <span class="s">LGN (thalamus)</span> → V1</div>
+    <div class="row"><span class="t">Right visual field</span> — → <span class="c">LEFT V1</span></div>
+    <div class="row"><span class="t">LGN magnocellular</span> — large neurons, mostly rods, <span class="c">movement</span></div>
+    <div class="row"><span class="t">LGN parvocellular</span> — small neurons, mostly cones, <span class="c">color, details, slow/non-moving</span></div>
+    <div class="row"><span class="t">V1 (primary visual cortex)</span> — <span class="a">first cortical visual processing; conscious vision</span></div>
+    <div class="row"><span class="t">Blindsight</span> — <span class="a">V1 damage → can react to visual info without consciously seeing it</span> (subcortical pathways)</div>
+    <div class="row"><span class="t">Visual association cortex</span> — further processes shape, movement, brightness, color</div>
+    <div class="row"><span class="t">Feature detectors</span> — <span class="a">neurons respond to specific features</span> (shape, depth, movement); more complex shapes as info processed</div>
+    <div class="row"><span class="t">Selective adaptation</span> — prolonged exposure → tuned neurons ↓ firing; supports feature-detector idea</div>
+    <div class="row"><span class="t">Simple cells</span> — <span class="c">in V1</span>; <span class="a">FIXED excitatory + inhibitory zones in RF</span>; specific orientation, specific location</div>
+    <div class="row"><span class="t">Complex cells</span> — respond to particular orientation <span class="c">ANYWHERE in large RF</span> (no fixed zones)</div>
+    <div class="row"><span class="t">Complex shapes</span> — <span class="s">inferior temporal cortex</span> (receives from fovea)</div>
+    <div class="row"><span class="t">Faces</span> — <span class="s">fusiform gyrus</span> (in IT cortex); also greebles, dog faces, car brands w/ expertise</div>
+    <div class="row"><span class="t">Prosopagnosia</span> — <span class="a">can't recognize faces</span> (despite intact object recognition); can describe age/sex but not identify</div>
+  </div>
+
+  <div class="topic" id="circ">
+    <h3>Circadian / SCN</h3>
+    <div class="row"><span class="t">Circadian rhythm</span> — <span class="a">daily rhythmic changes in behavior/physiology</span></div>
+    <div class="row"><span class="t">Entrainment by light</span> — natural rhythm synced to day/night</div>
+    <div class="row"><span class="t">Without day/night</span> — <span class="c">PERSISTS, free-runs near 24 hrs</span> (internal clock)</div>
+    <div class="row"><span class="t">SCN</span> = suprachiasmatic nucleus</div>
+    <div class="row"><span class="t">SCN location</span> — hypothalamus, above optic chiasm</div>
+    <div class="row"><span class="t">SCN evidence (1)</span> — <span class="c">oscillates without input</span> (single-cell oscillations)</div>
+    <div class="row"><span class="t">SCN evidence (2)</span> — receives <span class="c">DIRECT input from retina</span></div>
+    <div class="row"><span class="t">SCN evidence (3)</span> — lesions destroy rhythms (no recovery)</div>
+    <div class="row"><span class="t">SCN evidence (4)</span> — <span class="c">transplants restore rhythms</span> → chemical signal exists</div>
+    <div class="row"><span class="t">SCN active when</span> — <span class="c">DAY</span> (regardless of nocturnal/diurnal)</div>
+    <div class="row"><span class="t">SCN output</span> — <span class="c">BOTH neural (synaptic) AND diffusible chemicals</span></div>
+    <div class="row"><span class="t">SCN projects to</span> — hypothalamus → body temp, locomotion, glucocorticoids, sleep/wake</div>
+  </div>
+
+  <div class="topic" id="sleep">
+    <h3>Sleep — 2 Drives, Stages, REM</h3>
+    <div class="row"><span class="t">2 processes drive sleep</span> — <span class="c">sleep debt (homeostatic) + circadian rhythms in arousal</span></div>
+    <div class="row"><span class="t">Sleep debt</span> — diff btwn sleep needed and got; builds while awake</div>
+    <div class="row"><span class="t">Awake alert</span> — <span class="c">Beta</span> (desynchronized)</div>
+    <div class="row"><span class="t">Awake quiet (eyes closed)</span> — <span class="c">Alpha</span> <span class="n">(8–12 Hz)</span>, regular</div>
+    <div class="row"><span class="t">Stage 1</span> — <span class="c">Theta</span> <span class="n">(3.5–7.5 Hz)</span>; transition</div>
+    <div class="row"><span class="t">Stage 2</span> — Theta + <span class="c">sleep spindles</span> <span class="n">(12–14 Hz, 2–5/min)</span> + <span class="c">K-complexes</span> (only here, ~1/min, can be triggered by noise)</div>
+    <div class="row"><span class="t">Stages 3–4</span> — <span class="c">Delta &lt; 3.5 Hz</span>; slow-wave; deepest, hardest to wake</div>
+    <div class="row"><span class="t">REM</span> — looks like Stage 1 (desynchronized)</div>
+    <div class="row"><span class="t">REM features</span> — <span class="a">eyes dart back &amp; forth, muscle atonia (motor neuron inhibition in spinal cord), more easily awakened, alert when up, story-like dreams</span></div>
+    <div class="row"><span class="t">REM &amp; sleep paralysis</span> — atonia can persist if you wake during REM</div>
+    <div class="row"><span class="t">Progression</span> — <span class="n">90-min cycles</span>; SWS dominates EARLY; REM gets LONGER through night</div>
+  </div>
+
+  <div class="topic">
+    <h3>Sleep Brain Regions</h3>
+    <div class="row"><span class="t">Brainstem RAS</span> — arousal control; many regions critical for REM (EEG activation + atonia)</div>
+    <div class="row"><span class="t">Cholinergic neurons</span> — fire in anticipation of waking + REM</div>
+    <div class="row"><span class="t">VLPO (ventrolateral preoptic)</span> — <span class="c">"sleep neurons" — GABA inhibits arousal neurons</span> elsewhere</div>
+    <div class="row"><span class="t">Preoptic lesions</span> — <span class="w">complete insomnia → lethal exhaustion in days</span></div>
+  </div>
+
+  <div class="topic">
+    <h3>Sleep Neurotransmitters</h3>
+    <div class="row"><span class="t">Adenosine</span> — builds during day, INHIBITS arousal → sleep-promoting; <span class="c">caffeine blocks adenosine receptors</span></div>
+    <div class="row"><span class="t">Histamine</span> (post hypothal) — arousal; antihistamines → drowsy; <span class="w">REM OFF</span></div>
+    <div class="row"><span class="t">Orexin</span> (lat hypothal) — arousal, broad excitation; <span class="c">degeneration → narcolepsy</span></div>
+    <div class="row"><span class="t">ACh</span> — arousal + REM; hippocampal memory; <span class="c">REM ON</span> (high in waking AND REM)</div>
+    <div class="row"><span class="t">NE (locus coeruleus)</span> — arousal, vigilance; high awake, low SWS, <span class="c">ABSENT REM</span>; <span class="w">REM OFF</span></div>
+    <div class="row"><span class="t">5-HT (raphe)</span> — cortical arousal; automatic movements; <span class="w">REM OFF</span></div>
+  </div>
+
+  <div class="topic">
+    <h3>Why Sleep?</h3>
+    <div class="row"><span class="t">Universal in</span> — vertebrates</div>
+    <div class="row"><span class="t">Sleep deprivation studies</span> — <span class="c">equivocal</span></div>
+    <div class="row"><span class="t">Body rest</span> — NOT necessary (body OK without sleep, can do physical tasks)</div>
+    <div class="row"><span class="t">Brain rest</span> — SWS = low metabolism; clears free radicals</div>
+    <div class="row"><span class="t">Brain development</span> — REM peaks during dev (<span class="n">70% infant sleep is REM</span>)</div>
+    <div class="row"><span class="t">Memory</span> — <span class="c">REM = procedural learning; SWS = declarative learning</span></div>
+    <div class="row"><span class="t">Sleep-deprived rats</span> — weak, uncoordinated, can't regulate temp, hyperphagic but lose weight, eventually die</div>
+  </div>
+
+  <div class="topic" id="mem">
+    <h3>Learning &amp; Memory</h3>
+    <div class="row"><span class="t">Learning</span> — <span class="a">long-lasting behavior change from experience</span></div>
+    <div class="row"><span class="t">Memory</span> — record of experience underlying learning</div>
+    <div class="row"><span class="t">Observe learning?</span> — <span class="c">NOT directly</span>; only see performance</div>
+    <div class="row"><span class="t">Performance change ≠ learning</span> — fatigue, motivation, growth, drugs can change perf without learning</div>
+    <div class="row"><span class="t">HM surgery</span> — <span class="c">bilateral medial temporal lobe</span> (Scoville 1953) for epilepsy</div>
+    <div class="row"><span class="t">HM removed</span> — <span class="a">~⅔ of hippocampal formation, parts of temporal cortex, amygdala</span></div>
+    <div class="row"><span class="t">HM effect</span> — <span class="c">severe ANTEROGRADE amnesia</span>; couldn't form new long-term memories</div>
+    <div class="row"><span class="t">HM intact</span> — pre-surgery memory + short-term memory</div>
+    <div class="row"><span class="t">HM PRESERVED memory</span> — <span class="c">PROCEDURAL</span></div>
+    <div class="row"><span class="t">HM tasks OK on</span> — <span class="a">mirror drawing, rotary pursuit, incomplete pictures, Pavlovian conditioning</span></div>
+    <div class="row"><span class="t">HM tasks FAIL</span> — word lists, recognizing experimenter, recent news (any conscious recall)</div>
+    <div class="row"><span class="t">Retrograde amnesia</span> — loss of events <span class="c">BEFORE injury</span></div>
+    <div class="row"><span class="t">Anterograde amnesia</span> — loss of events <span class="c">AFTER injury</span></div>
+    <div class="row"><span class="t">Declarative (explicit)</span> — conscious; people, places, events</div>
+    <div class="row"><span class="t">Procedural (implicit)</span> — unconscious; tying shoes, hitting ball, speaking</div>
+    <div class="row"><span class="t">Memory consolidation</span> — <span class="a">weak new memory → stronger, less disruptable over time</span></div>
+    <div class="row"><span class="t">LTP</span> — long-term potentiation</div>
+    <div class="row"><span class="t">LTP discovered by</span> — Bliss &amp; Lomo</div>
+    <div class="row"><span class="t">LTP why interesting</span> — <span class="a">lasting ↑ in synaptic strength after activity</span> ("neurons that fire together, wire together") → cellular model of memory</div>
+    <div class="row"><span class="t">LTP requires</span> — <span class="c">NMDA receptors</span> (in hippocampus)</div>
+    <div class="row"><span class="t">NMDA blockade</span> — impairs water-maze learning (Morris)</div>
+    <div class="row"><span class="t">NMDA receptor</span> — <span class="c">glutamate receptor</span></div>
+    <div class="row"><span class="t">NMDA requires 2 events</span> — <span class="c">glutamate binding + depolarization</span> → coincidence detector</div>
+    <div class="row"><span class="t">NMDA permeable to</span> — <span class="c">Ca²⁺</span>, Na⁺, K⁺</div>
+    <div class="row"><span class="t">Possible LTP changes</span> — more receptors (AMPA), more NT release, new spines, larger spines</div>
+  </div>
+
+  <div class="topic" id="stroke">
+    <h3>Stroke</h3>
+    <div class="row"><span class="t">Cerebral hemorrhage</span> — bleeding (hypertension, aneurysm rupture, blood disease)</div>
+    <div class="row"><span class="t">Obstructive (ischemic)</span> — blocked flow</div>
+    <div class="row"><span class="t">Ischemia</span> — loss of blood flow</div>
+    <div class="row"><span class="t">Thrombosis</span> — clot/fat blockage <span class="c">AT site</span></div>
+    <div class="row"><span class="t">Embolism</span> — blockage <span class="c">MOVES from larger to smaller vessel</span></div>
+    <div class="row"><span class="t">Arteriosclerosis</span> — vessel narrowing</div>
+    <div class="row"><span class="t">Most damage =</span> <span class="c">EXCITOTOXIC</span> (not direct ischemia)</div>
+    <div class="row"><span class="t">Excitotoxic cascade</span> — <span class="a">blood-deprived neurons overactive → excessive glutamate → NMDA receptors → Ca²⁺ flood → poisons neuron</span></div>
+    <div class="row"><span class="t">Symptoms</span> — sudden numbness/weakness one side, sudden confusion / trouble speaking, sudden vision trouble, sudden walking trouble, sudden severe headache</div>
+    <div class="row"><span class="t">F.A.S.T.</span> — <span class="c">F</span>ace droop, <span class="c">A</span>rm drift, <span class="c">S</span>peech slurred, <span class="c">T</span>ime (911)</div>
+    <div class="row"><span class="t">Consequences</span> — cognitive issues, hemiplegia (one-side paralysis), hemiparesis (one-side weakness), speech, emotion, depression, numbness, pain</div>
+    <div class="row"><span class="t">Recurrence</span> — <span class="n">25%</span> have another within 5 years</div>
+    <div class="row"><span class="t">tPA</span> — <span class="c">clot-dissolver</span>; within <span class="n">3 hrs</span>; can be neurotoxic</div>
+    <div class="row"><span class="t">DISPA</span> — anticoagulant from vampire bats</div>
+    <div class="row"><span class="t">Neuroprotectants</span> — glutamate antagonists, antioxidants, apoptosis inhibitors (none FDA-approved)</div>
+    <div class="row"><span class="t">Also</span> — physical therapy</div>
+  </div>
+
+  <div class="topic" id="sz">
+    <h3>Seizures &amp; Epilepsy</h3>
+    <div class="row"><span class="t">Seizure</span> — <span class="a">sudden surge of abnormal, excessive, synchronized electrical activity</span></div>
+    <div class="row"><span class="t">Aura</span> — <span class="a">peculiar pre-convulsion changes</span> (smells, thoughts, feelings, hallucinations, chest tightness)</div>
+    <div class="row"><span class="t">Focal/partial</span> — <span class="c">restricted to focus</span></div>
+    <div class="row"><span class="t">Simple partial</span> — sensory/motor only (no LOC)</div>
+    <div class="row"><span class="t">Complex partial</span> — usu. <span class="s">temporal lobes</span>; <span class="c">automatisms + altered consciousness</span></div>
+    <div class="row"><span class="t">Generalized</span> — <span class="c">brain-wide, no focal point</span></div>
+    <div class="row"><span class="t">Grand mal</span> — <span class="a">tonic phase (no breathing, contraction) → clonic phase (rhythmic contraction) → coma (~5 min)</span></div>
+    <div class="row"><span class="t">Petit mal</span> — <span class="a">brief unawareness (absence)</span></div>
+    <div class="row"><span class="t">Automatism</span> — <span class="a">involuntary, repetitive motor behavior w/o awareness during seizure</span> (lip-smacking, fidgeting, walking aimlessly); common in complex partial</div>
+  </div>
+
+  <div class="topic" id="pd">
+    <h3>Parkinson's Disease</h3>
+    <div class="row"><span class="t">Symptom 1</span> — <span class="c">RIGIDITY</span> (cogwheel — short jerky movements)</div>
+    <div class="row"><span class="t">Symptom 2</span> — <span class="c">RESTING TREMOR</span> (hands; disappears in sleep)</div>
+    <div class="row"><span class="t">Symptom 3</span> — <span class="c">BRADYKINESIA</span> (slow movement, paucity of speech)</div>
+    <div class="row"><span class="t">Symptom 4</span> — <span class="c">POSTURAL INSTABILITY</span> (can't catch self when tripping)</div>
+    <div class="row"><span class="t">Cause</span> — <span class="a">loss of DA neurons in substantia nigra</span> (midbrain tegmentum)</div>
+    <div class="row"><span class="t">Pathway lost</span> — <span class="s">nigrostriatal DA pathway</span> (SN → striatum)</div>
+    <div class="row"><span class="t">MPTP story</span> — 1982 backstreet chemist made MPTP → opiate addicts got Parkinson's-like sx → MPTP destroys SN DA → animal model</div>
+    <div class="row"><span class="t">Disinhibition</span> — <span class="a">"inhibiting an inhibitor" → net excitation</span></div>
+    <div class="row"><span class="t">BG circuit (1)</span> — Cortex → striatum (glutamate, excitatory)</div>
+    <div class="row"><span class="t">BG circuit (2)</span> — Striatum → GPi (GABA, inhibitory)</div>
+    <div class="row"><span class="t">BG circuit (3)</span> — GPi → thalamus (GABA, inhibitory)</div>
+    <div class="row"><span class="t">BG circuit (4)</span> — Thalamus → motor cortex (excitation)</div>
+    <div class="row"><span class="t">BG circuit (5)</span> — SN → striatum (DA, facilitates)</div>
+    <div class="row"><span class="t">PD breaks circuit</span> — <span class="a">↓ DA → striatum can't inhibit GPi → GPi over-inhibits thalamus → no movement</span></div>
+    <div class="row"><span class="t">L-Dopa (Levodopa)</span> — <span class="c">DA can't cross BBB, but L-Dopa CAN</span> → converted to DA in brain (mainstay)</div>
+    <div class="row"><span class="t">Deprenyl (selegiline)</span> — MAO-B inhibitor, ↓ DA breakdown</div>
+    <div class="row"><span class="t">Other drugs</span> — DA agonists, COMT inhibitors</div>
+    <div class="row"><span class="t">Cryothalamotomy</span> — destroys tremor-producing thalamic area</div>
+    <div class="row"><span class="t">DBS</span> — deep brain stimulation (subthalamic nucleus or GPi)</div>
+    <div class="row"><span class="t">Pallidotomy</span> — interrupts globus pallidus pathway</div>
+    <div class="row"><span class="t">Transplants</span> — fetal/stem-cell DA neurons (experimental)</div>
+  </div>
+
+  <div class="topic" id="degen">
+    <h3>Degeneration / Regeneration</h3>
+    <div class="row"><span class="t">Anterograde degeneration</span> — <span class="a">distal axon dies after damage</span> (downstream end goes)</div>
+    <div class="row"><span class="t">Retrograde degeneration</span> — damage near terminal → upstream cell body dies</div>
+    <div class="row"><span class="t">Transneuronal</span> — <span class="a">damaged neuron's death triggers connected neurons</span> (anterograde or retrograde transneuronal)</div>
+    <div class="row"><span class="t">Apoptosis</span> — <span class="c">ACTIVE programmed cell death</span>; chromatin condenses, nucleus fragments, cell shrinks; CLEAN, no inflammation</div>
+    <div class="row"><span class="t">Necrosis</span> — <span class="c">PASSIVE cell death</span>; cell swells &amp; bursts; messy, inflammation</div>
+    <div class="row"><span class="t">Regeneration in invertebrates</span> — easy</div>
+    <div class="row"><span class="t">Regeneration in adult humans</span> — <span class="c">largely lost</span></div>
+    <div class="row"><span class="t">Regeneration depends on</span> — extent of damage + distance axons must travel</div>
+    <div class="row"><span class="t">PNS vs CNS regen</span> — <span class="c">PNS &gt; CNS</span></div>
+    <div class="row"><span class="t">Regeneration helped by</span> — <span class="s">Schwann cells, growth factors, cell adhesion molecules</span></div>
+    <div class="row"><span class="t">Reorganization (1)</span> — strengthening EXISTING connections (LTP-like)</div>
+    <div class="row"><span class="t">Reorganization (2)</span> — "sprouting" of NEW connections (axons grow into denervated territory)</div>
+    <div class="row"><span class="t">BrDu</span> — <span class="a">thymidine analog incorporated into DNA of dividing cells</span>; identifies newly-born neurons</div>
+    <div class="row"><span class="t">Neurogenesis</span> — <span class="a">birth of new neurons</span></div>
+    <div class="row"><span class="t">Adult neurogenesis sites</span> — <span class="s">hippocampus (dentate gyrus), olfactory bulb (subventricular zone)</span></div>
+    <div class="row"><span class="t">Antidepressants</span> — <span class="c">↑ hippocampal neurogenesis</span></div>
+  </div>
+</div>
+
+<!-- ==================== GLOSSARY ==================== -->
+<div class="section" id="gloss">
+  <h2>Acronym Glossary</h2>
+  <div class="topic">
+    <div class="row"><span class="t">ACh</span> — acetylcholine</div>
+    <div class="row"><span class="t">ACTH</span> — adrenocorticotropic hormone</div>
+    <div class="row"><span class="t">AP</span> — action potential</div>
+    <div class="row"><span class="t">BBB</span> — blood-brain barrier</div>
+    <div class="row"><span class="t">BLA</span> — basolateral amygdala (input)</div>
+    <div class="row"><span class="t">BNST</span> — bed nucleus of stria terminalis (anxiety)</div>
+    <div class="row"><span class="t">CE</span> — central nucleus of amygdala (output)</div>
+    <div class="row"><span class="t">CNS</span> — central nervous system</div>
+    <div class="row"><span class="t">CRF</span> — corticotropin-releasing factor</div>
+    <div class="row"><span class="t">CSF</span> — cerebrospinal fluid</div>
+    <div class="row"><span class="t">CT</span> — computed tomography</div>
+    <div class="row"><span class="t">DA</span> — dopamine</div>
+    <div class="row"><span class="t">DBS</span> — deep brain stimulation</div>
+    <div class="row"><span class="t">DRN</span> — dorsal raphe nucleus</div>
+    <div class="row"><span class="t">EEG</span> — electroencephalogram</div>
+    <div class="row"><span class="t">EPSP / IPSP</span> — excitatory / inhibitory post-syn potential</div>
+    <div class="row"><span class="t">fMRI</span> — functional MRI (BOLD)</div>
+    <div class="row"><span class="t">GABA</span> — inhibitory amino acid NT</div>
+    <div class="row"><span class="t">GPi</span> — globus pallidus internal</div>
+    <div class="row"><span class="t">HPA</span> — hypothalamic-pituitary-adrenal</div>
+    <div class="row"><span class="t">HPLC</span> — high-pressure liquid chromatography</div>
+    <div class="row"><span class="t">ICSS</span> — intracranial self-stimulation</div>
+    <div class="row"><span class="t">IT</span> — inferior temporal cortex</div>
+    <div class="row"><span class="t">LC</span> — locus coeruleus</div>
+    <div class="row"><span class="t">LGN</span> — lateral geniculate nucleus (visual)</div>
+    <div class="row"><span class="t">LH</span> — learned helplessness</div>
+    <div class="row"><span class="t">LTP</span> — long-term potentiation</div>
+    <div class="row"><span class="t">MAOI</span> — monoamine oxidase inhibitor</div>
+    <div class="row"><span class="t">MGN</span> — medial geniculate nucleus (auditory)</div>
+    <div class="row"><span class="t">mPFC</span> — medial prefrontal cortex</div>
+    <div class="row"><span class="t">NE</span> — norepinephrine</div>
+    <div class="row"><span class="t">NMDA</span> — glutamate receptor critical for LTP</div>
+    <div class="row"><span class="t">NT</span> — neurotransmitter</div>
+    <div class="row"><span class="t">PD</span> — Parkinson's disease</div>
+    <div class="row"><span class="t">PET</span> — positron emission tomography</div>
+    <div class="row"><span class="t">PNS</span> — peripheral nervous system</div>
+    <div class="row"><span class="t">REM</span> — rapid eye movement sleep</div>
+    <div class="row"><span class="t">RF</span> — receptive field</div>
+    <div class="row"><span class="t">SCN</span> — suprachiasmatic nucleus</div>
+    <div class="row"><span class="t">SN</span> — substantia nigra</div>
+    <div class="row"><span class="t">SSRI</span> — selective serotonin reuptake inhibitor</div>
+    <div class="row"><span class="t">SWS</span> — slow-wave sleep</div>
+    <div class="row"><span class="t">TCA</span> — tricyclic antidepressant</div>
+    <div class="row"><span class="t">tPA</span> — tissue plasminogen activator</div>
+    <div class="row"><span class="t">V1</span> — primary visual cortex</div>
+    <div class="row"><span class="t">VTA</span> — ventral tegmental area</div>
+    <div class="row"><span class="t">5-HT</span> — serotonin</div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
